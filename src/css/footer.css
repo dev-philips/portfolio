@@ -1,0 +1,15 @@
+:root {
+  --orange: #ff7e5f;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: green;
+}
+
+.footer-inner {
+  max-width: ;
+}
