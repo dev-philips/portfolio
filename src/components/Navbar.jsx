@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import '../css/navbar.css'
 import userImage from '../assets/images/philips.jpg'
+import philips_resume from '../assets/philips-resume.pdf'
 
 const Navbar = () => {
 
@@ -49,7 +50,7 @@ const Navbar = () => {
 
         <div className="ocv-btn-div">
           <div className="download-cv-2">
-            <a href="./DB/Philips' Resume.pdf">Download CV</a>
+            <a href={ philips_resume }>Download CV</a>
           </div>
 
           <button id="ocv-button" className="ocv-button" onClick={handleOcv}>

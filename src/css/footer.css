@@ -1,5 +1,6 @@
 :root {
   --orange: #ff7e5f;
+  --yellow: #F4B400;
   --sec-bg: #1d1d1d;
   --grey-text: #ccc0c0;
 }
@@ -11,5 +12,30 @@
 }
 
 .footer-inner {
-  max-width: ;
+  max-width: 1100px;
+}
+
+.footer-inner .footer-main .footer-top form {
+  background-color: rebeccapurple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-top form input {
+  /* min-width: 200px; */
+  padding: 10px;
+  border: 1px solid var(--yellow);
+  border-radius: 25px;
+  border: none;
+  outline: none;
+}
+
+.footer-top form button {
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-weight: 500;
+  background-color: var(--yellow);
+  border: none;
 }
