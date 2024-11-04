@@ -41,7 +41,7 @@ const HomePage = () => {
         const allProjects = await response.data.record.projects
         console.log(allProjects);
         setProjects(allProjects)
-        console.log('Fetched Projects (2nd Trial)');
+        console.log('Fetched Projects (2nd Trial)', projects);
 
         setTimeout(() => {
           setLoadingProjects(false)
