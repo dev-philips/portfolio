@@ -159,7 +159,7 @@ header nav {
   border: none;
   background-color: transparent;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 

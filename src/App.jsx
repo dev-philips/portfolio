@@ -7,22 +7,34 @@ import AboutMe from './pages/AboutMe'
 import Projects from './pages/Projects'
 import Tools from './pages/Tools'
 import Footer from './components/Footer'
+import Spinner from './components/Spinner'
 
 export default function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/about-me' element={<AboutMe />} />
-            <Route path='/projects' element={<Projects />} />
-            <Route path='/tools' element={<Tools />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
+      {
+        Routes ? (
+          <>
+            <Router>
+              <Navbar />
+              <main>
+                <Routes>
+                  <Route path='/' element={<HomePage />} />
+                  <Route path='/about-me' element={<AboutMe />} />
+                  <Route path='/projects' element={<Projects />} />
+                  <Route path='/tools' element={<Tools />} />
+                </Routes>
+              </main>
+              <Footer />
+            </Router>
+          </>
+        ) : (
+          <>
+            <Spinner />
+          </>
+        )
+      }
+
 
     </>
   )

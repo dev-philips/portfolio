@@ -7,7 +7,7 @@
 
 .footer {
   width: 100%;
-  border: 2px solid green;
+  background-color: var(--sec-bg);
 }
 
 .footer-inner {
@@ -115,12 +115,21 @@
   margin: 0;
   margin-left: 5px;
   color: var(--yellow);
+  display: flex;
+  align-items: center;
 }
 
-.footer-footer p i {
+.footer-footer p i:nth-of-type(1) {
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+.footer-footer p i:nth-of-type(2) {
   font-size: 22px;
   margin-left: 5px;
 }
+
+
 
 @media (max-width: 767px) {
   .footer-main-main > div {

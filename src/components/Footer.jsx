@@ -10,7 +10,6 @@ const Footer = () => {
   const handleSubmit = () => {
     e.preventDefault()
 
-    fetch
 
   }
   return (
@@ -74,7 +73,7 @@ const Footer = () => {
 
 
 
-            <div className='f-logo d-none d-md-flex'>
+            <div className='f-logo d-none d-md-block'>
               <div className='f-logo-spec'>
                 <img src={ lite_spark } alt="" />
                 <p>Philips <br /> Edun</p>
@@ -87,7 +86,7 @@ const Footer = () => {
         </div>
 
         <div className='footer-footer'>
-          <p><i class='bx bx-copyright' ></i>  Philips Olorunwa Edun || Built with  <i class='bx bxs-heart'></i></p>
+          <p><i className='bx bx-copyright' ></i>  Philips Olorunwa Edun || Built with  <i className='bx bxs-heart'></i></p>
         </div>
       </div>
     </div>
