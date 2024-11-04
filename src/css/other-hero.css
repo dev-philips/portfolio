@@ -1,0 +1,124 @@
+
+/* ------------------------------------- */
+
+.home-hero {
+  color: white;
+  width: 80%;
+  margin: 100px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.home-hero .the-text {
+  width: 70%;
+}
+
+.home-hero .the-img {
+  width: 30%;
+}
+
+.home-hero .the-img img {
+  width: 100%;
+}
+
+.fr-dev {
+  background-image: linear-gradient(to right, #ffffff, #ff7e5f); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.available {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.available span {
+  background-color: greenyellow;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  border-radius: 100%;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.call-btn {
+  color: white;
+  padding: 12px 24px;
+  border: 2px solid var(--orange);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.call-btn:hover {
+  background-color: var(--orange);
+  color: black;
+  border: 2px solid black;
+}
+
+.hire-btn {
+  color: black;
+  padding: 12px 24px;
+  border: 2px solid var(--orange);
+  border-radius: 30px;
+  background-color: var(--orange);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hire-btn:hover {
+  color: white;
+  background-color: transparent;
+}
+
+.home-hero .the-img {
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+
+/* -------------------------- */
+
+
+
+@media (max-width: 1000px) {
+  .h-s2-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  
+  .home-hero {
+    flex-direction: column;
+    gap: 30px;
+    margin: 50px auto;
+  }
+
+  .home-hero .the-text {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .home-hero .the-text h1 {
+    font-size: 25px;
+  }
+
+  .home-hero .the-img {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+}

@@ -4,6 +4,7 @@ import WorksAndProjects from '../components/WorksAndProjects'
 import OneProject from '../components/OneProjects'
 import ExperienceComp from '../components/ExperienceComp'
 import OneExperience from '../components/OneExperience'
+import CallToAction from '../components/CallToAction'
 
 import axios from 'axios'
 import Spinner from '../components/Spinner'
@@ -91,6 +92,8 @@ const HomePage = () => {
         <OneExperience />
         <OneExperience />
       </ExperienceComp>
+
+      <CallToAction />
     </>
   )
 }

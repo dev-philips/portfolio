@@ -1,0 +1,42 @@
+/* ---------------------------- */
+
+.call-to-action {
+  width: 90%;
+  margin-inline: auto;
+  margin-bottom: 50px;
+  color: white;
+  background-color: #1d1d1d;
+  padding: 50px 30px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* ---------------------------- */
+
+@media (max-width: 767px) {
+
+  .call-to-action {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    width: 98%;
+  }
+
+  .cta-text {
+    width: 100%;
+  }
+
+  .cta-text > * {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .cta-text p {
+    margin-bottom: 30px;
+  }
+}
