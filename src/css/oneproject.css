@@ -24,7 +24,7 @@
 
 .owc-text {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between !important;
   align-items: start;
   margin: 15px 0;
 }

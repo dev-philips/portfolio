@@ -91,7 +91,7 @@ const Footer = () => {
         </div>
 
         <div className='footer-footer'>
-          <p><i className='bx bx-copyright' ></i>  Philips Olorunwa Edun || Built with  <i className='bx bxs-heart'></i></p>
+          <p><i className='bx bx-copyright' ></i>  Philips O. Edun || Built with  <i className='bx bxs-heart'></i></p>
         </div>
       </div>
     </div>

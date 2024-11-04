@@ -11,10 +11,10 @@ const OneProject = ({ project }) => {
 
       <div className="owc-text">
         <div>
-          <p>Jumia e-commerce website
+          <p>{ project.name }
             <i className='bx bxs-chevron-right'></i>
           </p>
-          <span>Stack: React, Node, Express, MongoDB</span>
+          <span>{ project.stack }</span>
           {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit eveniet nisi alias voluptatem consequuntur id!</p> */}
         </div>
 

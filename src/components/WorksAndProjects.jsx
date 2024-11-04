@@ -10,6 +10,7 @@ const WorksAndProjects = ({children}) => {
         <p>Check out some of my projects where I’ve crafted sleek, responsive websites and web applications.</p>
       </div>
 
+
       <div className="h-s2-main">
 
         {children}
