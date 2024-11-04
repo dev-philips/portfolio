@@ -1,0 +1,22 @@
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.education-comp {
+  background-color: var(--sec-bg);
+  color: white;
+  padding: 40px 20px;
+  margin: 30px auto;
+  width: 90%;
+  border-radius: 30px;
+}
+
+@media (max-width: 767px) {
+  .education-comp {
+    border-radius: 10px;
+    width: 98%;
+  }
+}
