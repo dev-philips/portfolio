@@ -1,0 +1,52 @@
+
+.one-work-card {
+  border: 1px solid #909090;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin-inline:  auto;
+}
+
+.owc-img {
+  border-radius: 12px;
+  width: 100%;
+  height: 250px;
+  /* border: 2px solid green; */
+}
+
+.owc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+.owc-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 15px 0;
+}
+
+.owc-text div p:nth-of-type(1) {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.owc-text div p:nth-of-type(2) {
+  color: #909090;
+}
+
+.owc-text div span {
+  color: #909090;
+  font-size: 16px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.owc-text div i {
+  font-size: 20px;
+}

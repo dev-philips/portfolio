@@ -12,11 +12,14 @@ const Footer = () => {
 
 
   }
+
+
   return (
     <div className='footer'>
       <div className="footer-inner">
         <div className='footer-main'>
           <div className='footer-top'>
+            <p>Subscribe to my mothly newsletter about Tech, Arts and Life.</p>
             <form action="">
               <input type="text" placeholder='Enter Your Email' />
               <button>Subscribe</button>
@@ -25,22 +28,14 @@ const Footer = () => {
 
           <div className='footer-main-main'>
 
-            <div className='f-logo d-flex d-md-none'>
+            <div className='f-logo f-logo-up'>
               <div className='f-logo-spec'>
                 <img src={ lite_spark } alt="" />
                 <p>Philips <br /> Edun</p>
               </div>
             </div>
 
-            <div className='f-link-row'>
-              <p>Quick Links</p>
-
-              <ul>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Experiences</a></li>
-                <li><a href="">About me</a></li>
-              </ul>
-            </div>
+            
 
 
             <div className='f-link-row'>
@@ -71,9 +66,19 @@ const Footer = () => {
               </ul>
             </div>
 
+            <div className='f-link-row'>
+              <p>Quick Links</p>
+
+              <ul>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Experiences</a></li>
+                <li><a href="">About me</a></li>
+              </ul>
+            </div>
 
 
-            <div className='f-logo d-none d-md-block'>
+
+            <div className='f-logo f-logo-down'>
               <div className='f-logo-spec'>
                 <img src={ lite_spark } alt="" />
                 <p>Philips <br /> Edun</p>

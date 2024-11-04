@@ -37,6 +37,11 @@
   outline: none;
 }
 
+.footer-top p {
+  color: white;
+  text-align: center;
+}
+
 .footer-top form button {
   padding: 10px 15px;
   border-radius: 25px;
@@ -60,6 +65,15 @@
 
 .footer-main-main > .f-logo {
   flex: 1.3;
+}
+
+.f-logo-down {
+  display: none !important;
+  display: none !important;
+}
+
+.f-logo-up {
+  display: block;
 }
 
 
@@ -140,4 +154,13 @@
   .footer-main-main > .f-logo {
     flex: 1;
   }
+
+  .f-logo-down {
+    display: flex !important;
+  }
+
+  .f-logo-up {
+    display: none;
+  }
 }
+

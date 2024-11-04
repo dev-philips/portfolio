@@ -1,0 +1,53 @@
+
+.one-exper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.green-dot {
+  background-color: greenyellow;
+  min-width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 100%;
+  margin-right: 10px !important;
+}
+
+.oe-left {
+  display: flex;
+  align-items: first baseline;
+}
+
+.oe-left > * {
+  margin: 0;
+}
+
+.exp-company {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: start;
+}
+
+.exp-role {
+  color: #909090;
+  font-size: 17px;
+}
+
+
+@media (max-width: 1000px) {
+  .h-s2-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+ 
+
+  .one-exper {
+    flex-direction: column;
+  }
+
+ 
+}
