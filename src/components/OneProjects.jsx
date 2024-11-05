@@ -12,7 +12,7 @@ const OneProject = ({ project }) => {
       <div className="owc-text">
         <div>
           <p>{ project.name }
-            <i className='bx bxs-chevron-right'></i>
+            <span><i className='bx bxs-chevron-right'></i></span>
           </p>
           <span>{ project.stack }</span>
           {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit eveniet nisi alias voluptatem consequuntur id!</p> */}

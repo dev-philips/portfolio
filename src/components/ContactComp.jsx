@@ -48,7 +48,7 @@ const ContactComp = () => {
           
         })
     } catch (error) {
-
+      console.log('Error submiting email', error);
     }
   }
 
@@ -59,18 +59,18 @@ const ContactComp = () => {
       </div>
 
       <div className='cc-main'>
-        <a href="tel:+2348146817725" className='one-c-link'><img src={phone_icon} alt="" /> +234 8146817725</a>
+        <a href="tel:+2348146817725" target='_blank' className='one-c-link'><img src={phone_icon} alt="" /> +234 8146817725</a>
 
 
-        <a href="tel:+2348146817725" className='one-c-link'><img src={whatsapp_icon} alt="" /> +234 8129248289</a>
+        <a href="https://wa.me/08129248289" target='_blank' className='one-c-link'><img src={whatsapp_icon} alt="" /> +234 8129248289</a>
 
-        <a href="tel:+2348146817725" className='one-c-link'><img src={instagram_icon} alt="" /> dev_philips</a>
+        <a href="https://www.instagram.com/dev_philips" target='_blank' className='one-c-link'><img src={instagram_icon} alt="" /> dev_philips</a>
 
-        <a href="tel:+2348146817725" className='one-c-link'><img src={email_icon} alt="" /> philipsedun@gmail.com</a>
+        <a href="mailto:philipsedun@gmail.com" target='_blank' className='one-c-link'><img src={email_icon} alt="" /> philipsedun@gmail.com</a>
 
-        <a href="tel:+2348146817725" className='one-c-link'><img src={twitter_icon} alt="" /> philips_of_ng</a>
+        <a href="https://www.x.com/philips_of_ng" target='_blank' className='one-c-link'><img src={twitter_icon} alt="" /> philips_of_ng</a>
 
-        <a href="tel:+2348146817725" className='one-c-link'><img src={facebook_icon} alt="" /> Philips Olorunwa Edun</a>
+        <a href="https://www.facebook.com/" target='_blank' className='one-c-link'><img src={facebook_icon} alt="" /> Philips Olorunwa Edun</a>
       </div>
 
 

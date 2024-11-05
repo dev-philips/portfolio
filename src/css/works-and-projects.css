@@ -21,10 +21,16 @@
 }
 
 .h-s2-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+  display: flex;
+  justify-content: center;
   margin: 40px auto;
   gap: 20px;
+}
+
+.h-s2-main > div {
+  min-width: 300px;
 }
 
 
@@ -64,7 +70,9 @@
   }
 
   .h-s2-main {
-    grid-template-columns: 1fr !important;
+    /* grid-template-columns: 1fr !important; */
+    flex-wrap: wrap;
+
   }
 
   .one-exper {

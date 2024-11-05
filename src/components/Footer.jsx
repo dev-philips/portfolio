@@ -1,16 +1,41 @@
-import React, { useRef } from 'react'
+//DEPENDENCIES AND TOOLS
+import React, { useRef, useState } from 'react'
 import '../css/footer.css'
+import emailjs from '@emailjs/browser'
 
+//EXTRAS
 import lite_spark from '../assets/images/lite_spark.png'
-import copyrights_img from '../assets/images/copyright.png'
+
 
 const Footer = () => {
   const emailRef = useRef()
 
-  const handleSubmit = () => {
+  const [submitedEmail, setSubmitedEmail] = useState(false)
+  const [submiting, setSubmiting] = useState(false)
+
+  const handleSubmit = (e) => {
     e.preventDefault()
 
+    try {
+      setSubmiting(true)
 
+      emailjs.sendForm('service_sx7tqx4', 'template_9c4q13a', emailRef.current, '37C25JUTR-ncVG2C-')
+      .then((result) => {console.log('Submited')
+
+        setTimeout(() => {
+          setSubmitedEmail(true)
+        }, 5000);
+
+        setTimeout(() => {
+          setSubmiting(false)
+        }, 5000);
+
+      })
+      .catch((error) => {console.log('Failed to submit email', error)})
+
+    } catch (error) {
+      console.log('Error submiting Email', error);
+    }
   }
 
 
@@ -20,9 +45,11 @@ const Footer = () => {
         <div className='footer-main'>
           <div className='footer-top'>
             <p>Subscribe to my mothly newsletter about Tech, Arts and Life.</p>
-            <form action="">
-              <input type="text" placeholder='Enter Your Email' />
-              <button>Subscribe</button>
+            <form onSubmit={handleSubmit}>
+              <input type="text" ref={emailRef} placeholder='Enter Your Email' />
+              <button type='submit'>
+                Subscribe
+              </button>
             </form>
           </div>
 

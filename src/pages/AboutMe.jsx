@@ -125,7 +125,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <OtherHero theText={`Hi, I’m Edun Philips, a 92 Years Old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={''} theImg={verified_image} />
+      <OtherHero theText={`Hi, I’m Edun Philips, a 92 Years Old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={verified_image} />
       
       <EducationComp>
 
