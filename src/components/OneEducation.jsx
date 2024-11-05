@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/one-education.css'
 
-const OneEducation = () => {
+const OneEducation = ({ education }) => {
   return (
     <div className='one-education'>
       <div className='oe-dot'>

@@ -5,6 +5,8 @@ import OneProject from '../components/OneProjects'
 import ExperienceComp from '../components/ExperienceComp'
 import OneExperience from '../components/OneExperience'
 import CallToAction from '../components/CallToAction'
+import EducationComp from '../components/EducationComp'
+import OneEducation from '../components/OneEducation'
 
 import axios from 'axios'
 import Spinner from '../components/Spinner'
@@ -86,6 +88,10 @@ const HomePage = () => {
 
 
       </WorksAndProjects>
+
+      <EducationComp>
+        <OneEducation />
+      </EducationComp>
 
       <ExperienceComp>
         <OneExperience />
