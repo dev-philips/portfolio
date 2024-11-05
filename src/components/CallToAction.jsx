@@ -3,6 +3,11 @@ import '../css/call-to-action.css'
 import puzzle_image from '../assets/images/puzzle.png'
 
 const CallToAction = () => {
+
+  const handleSend = async () => {
+    
+  }
+
   return (
     <div className="call-to-action">
       <div className="cta-text">

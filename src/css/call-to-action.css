@@ -13,6 +13,24 @@
   align-items: center;
 }
 
+.cta-text {
+  width: 70%;
+}
+
+.cta-text h4 {
+  margin-bottom: 12px;
+}
+
+.cta-text > * {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: fit-content;
+}
+
+.cta-text a {
+  display: block !important;
+}
 
 /* ---------------------------- */
 
@@ -33,7 +51,13 @@
 
   .cta-text > * {
     margin: auto;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cta-text a {
+    display: block !important;
   }
 
   .cta-text p {

@@ -23,7 +23,7 @@
 .h-s2-main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 80px auto;
+  margin: 40px auto;
   gap: 20px;
 }
 
@@ -55,6 +55,7 @@
     border-radius: 15px;
     padding-inline: 22px;
     width: 98%;
+    padding: 30px 20px;
   }
 
   .h-s2-head p {

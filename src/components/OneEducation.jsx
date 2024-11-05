@@ -9,10 +9,9 @@ const OneEducation = ({ education }) => {
       </div>
 
       <div className='oe-text'>
-        <h5>B.Sc Computer Science</h5>
-        <p>{`University of Ibadan (Undergraduate)`}</p>
-        <p>2024 - 2029
-        </p>
+        <h5>{ education.certificate }</h5>
+        <p>{ education.institution }</p>
+        <p>{ education.duration }</p>
       </div>
     </div>
   )

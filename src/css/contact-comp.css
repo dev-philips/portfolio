@@ -1,0 +1,101 @@
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.contact-comp {
+  width: 90%;
+  padding: 50px 40px;
+  background-color: var(--sec-bg);
+  color: white !important;
+  margin: 40px auto;
+  border-radius: 30px;
+}
+
+.cc-head {
+  margin-bottom: 30px;
+}
+
+
+.cc-main {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cc-main .one-c-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.one-c-link img {
+  width: 30px;
+}
+
+.cc-message {
+  width: 100% !important;
+  display: flex;
+  justify-content: center !important;
+  margin: 18px auto;
+  height: 70px;
+}
+
+.cc-message div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border: 2px solid var(--orange);
+  border-radius: 100px;
+  padding: 10px;
+}
+
+.cc-message div input {
+  height: 100%;
+  width: 80%;
+  border-radius: inherit;
+  background-color: transparent;
+  border: #1d1d1d;
+  outline: none;
+  color: white;
+  padding: 0 5px;
+}
+
+.cc-message div input::placeholder {
+  color: #eee5e5;
+}
+
+.cc-message div button {
+  border-radius: inherit;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 2px solid var(--grey-text);
+}
+
+.cc-message div button img {
+  width: 80%;
+  height: 80%;
+}
+
+@media (max-width: 767px) {
+  .contact-comp {
+    border-radius: 10px;
+    width: 98%;
+    padding: 40px 30px;
+  }
+
+  .cc-main {
+    grid-template-columns: 1fr;
+  }
+}

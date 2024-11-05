@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/education-comp.css'
 
-const EducationComp = ({ education }) => {
+const EducationComp = ({ children }) => {
   return (
     <div className='education-comp'>
       <div className="ec-head">
@@ -9,7 +9,7 @@ const EducationComp = ({ education }) => {
       </div>
 
       <div className='ec-body'>
-        {education}
+        { children }
       </div>
     </div>
   )

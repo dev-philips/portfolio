@@ -1,7 +1,14 @@
-import React from 'react'
+//DEPENDENCIES AND TOOLS
+import React, { useState } from 'react'
+
+//COMPONENTS
 import '../css/experience-comp.css'
 
+
 const ExperienceComp = ({children}) => {
+
+ 
+
   return (
 
     <div className="experience-comp">

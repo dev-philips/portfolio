@@ -8,10 +8,18 @@
 .education-comp {
   background-color: var(--sec-bg);
   color: white;
-  padding: 40px 20px;
+  padding: 50px 40px;
   margin: 30px auto;
   width: 90%;
   border-radius: 30px;
+}
+
+.ec-head {
+  margin-bottom: 25px;
+}
+
+.ec-body {
+  width: 100% !important;
 }
 
 @media (max-width: 767px) {
