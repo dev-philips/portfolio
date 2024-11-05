@@ -45,10 +45,27 @@ const Footer = () => {
         <div className='footer-main'>
           <div className='footer-top'>
             <p>Subscribe to my mothly newsletter about Tech, Arts and Life.</p>
-            <form onSubmit={handleSubmit}>
-              <input type="text" ref={emailRef} placeholder='Enter Your Email' />
+            <form  ref={emailRef} onSubmit={handleSubmit}>
+              <input type="text" name='email' placeholder='Enter Your Email' required />
               <button type='submit'>
-                Subscribe
+                
+                {
+                  submitedEmail ? (
+                    <>
+                      Subscribed
+                    </>
+                  ) : submiting ? (
+                    <>
+                      <i className='bx bx-loader spin-loader' ></i>
+                    </>
+                  ) : (
+                    <>
+                      Subscribe
+                    </>
+                  )
+                }
+                
+                
               </button>
             </form>
           </div>

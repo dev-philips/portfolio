@@ -49,6 +49,9 @@
   font-weight: 500;
   background-color: var(--yellow);
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -142,6 +145,29 @@
 .footer-footer p i:nth-of-type(2) {
   font-size: 22px;
   margin-left: 5px;
+}
+
+
+
+.sent-check {
+  color: black;
+  font-size: 25px;
+}
+
+.spin-loader {
+  color: black;
+  font-size: 25px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
