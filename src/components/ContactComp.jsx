@@ -1,5 +1,6 @@
 //DEPENDENCIES AND TOOLS
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 //COMPONENTS
 import '../css/contact-comp.css'
@@ -15,6 +16,42 @@ import send_icon from '../assets/images/send.png'
 
 
 const ContactComp = () => {
+
+  const [sentMessage, setSentMessage] = useState(false)
+  const [sendingMessage, setSendingMessage] = useState(false)
+
+  const messageRef = useRef()
+
+  const handleSend = (e) => {
+    e.preventDefault()
+
+    try {
+
+      setSendingMessage(true)
+
+      emailjs.sendForm("service_sx7tqx4", "template_wonl12j", messageRef.current, '37C25JUTR-ncVG2C-')
+        .then((result) => {
+          console.log('Sent')
+          setSentMessage(true)
+
+          setTimeout(() => {
+            setSendingMessage(false)
+          }, 5000);
+
+          setTimeout(() => {
+            setSentMessage(false)
+          }, 5000);
+
+        })
+        .catch((error) => console.log('Failed to send message...', error))
+        .finally(() => {
+          
+        })
+    } catch (error) {
+
+    }
+  }
+
   return (
     <div className='contact-comp'>
       <div className='cc-head'>
@@ -37,10 +74,28 @@ const ContactComp = () => {
       </div>
 
 
-      <form className='cc-message' action="">
+      <form ref={messageRef} className='cc-message' onSubmit={handleSend}>
         <div>
-          <input type="text" placeholder='Send a quick message from here' />
-          <button><img src={send_icon} alt="" /></button>
+          <input type="text" name='message' placeholder='Send a quick message from here' required />
+          <button type="submit">
+
+            {
+              sentMessage ? (
+                <>
+                  <i className='bx bx-check sent-check'></i>
+                </>
+              ) : sendingMessage ? (
+                <>
+                  <i class='bx bx-loader spin-loader' ></i>
+                </>
+              ) : (
+                <>
+                  <img src={send_icon} alt="" />
+                </>
+              )
+            }
+
+          </button>
         </div>
       </form>
     </div>

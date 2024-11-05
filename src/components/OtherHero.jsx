@@ -1,16 +1,16 @@
 import React from 'react'
 import '../css/other-hero.css'
 
-const OtherHero = ({theText, theSub, theImg}) => {
+const OtherHero = ({pageTitle, theText, theSub, theImg, theGradText}) => {
   return (
     <div className="home-hero">
 
       <div className="the-text">
-        <h5 className='mb-5'>ABOUT ME</h5>
+        <h5 className='mb-5'>{ pageTitle }</h5>
 
         <h3>{theText}</h3>
 
-        <p className="available"><span></span>Available for projects</p>
+        <p className="available"><span></span>{ theSub }</p>
 
         
       </div>
