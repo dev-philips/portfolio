@@ -24,11 +24,12 @@
 }
 
 .oe-text {
-
+  text-align: start !important;
 }
 
 .oe-text p {
   color: var(--grey-text);
+  text-align: start;
 }
 
 .oe-text p:nth-of-type(1) {

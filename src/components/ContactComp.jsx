@@ -70,7 +70,7 @@ const ContactComp = () => {
 
         <a href="https://www.x.com/philips_of_ng" target='_blank' className='one-c-link'><img src={twitter_icon} alt="" /> philips_of_ng</a>
 
-        <a href="https://www.facebook.com/" target='_blank' className='one-c-link'><img src={facebook_icon} alt="" /> Philips Olorunwa Edun</a>
+        <a href="https://web.facebook.com/profile.php?id=100074200946640" target='_blank' className='one-c-link'><img src={facebook_icon} alt="" /> Philips Olorunwa Edun</a>
       </div>
 
 

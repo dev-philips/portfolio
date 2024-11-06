@@ -11,6 +11,8 @@ import Spinner from '../components/Spinner'
 
 const HomePage = () => {
 
+  const [internetError, setInternetError] = useState(false)
+
   const [projects, setProjects] = useState([])
   const [loadingProjects, setLoadingProjects] = useState(false)
 
@@ -49,6 +51,7 @@ const HomePage = () => {
         }, 5000);
       } catch (secondError) {
         console.log('Failed to fetch projects after retrying', secondError);
+        setInternetError(true)
       }
 
     }
@@ -124,7 +127,18 @@ const HomePage = () => {
         {
           loadingProjects ? (
             <>
-              <Spinner whatsLoading={'Projects'} />
+              <Spinner whatsLoading={'Projects'} status={ `${ internetError ? 'Please check your internet connection' : 'Please wait' }` } />
+              {/* {
+                internetError ? (
+                  <>
+                    <p>Please check your internet connection</p>
+                  </>
+                ) : (
+                  <>
+                    ''
+                  </>
+                )
+              } */}
             </>
           ) : (
             <>
@@ -148,7 +162,7 @@ const HomePage = () => {
         {
           loadingExperience ? (
             <>
-              <Spinner whatsLoading={'Experinces'} />
+             <Spinner whatsLoading={'Experiences'} status={ `${ internetError ? 'Please check your internet connection' : 'Please wait' }` } />
             </>
           ) : (
             <>

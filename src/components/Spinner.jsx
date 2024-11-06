@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/spinner.css'
-const Spinner = ({ whatsLoading }) => {
+const Spinner = ({ whatsLoading, status }) => {
   return (
     <div className='spinner-container'>
       
@@ -9,7 +9,7 @@ const Spinner = ({ whatsLoading }) => {
 
         </div>
 
-        <p>{`Loading ${whatsLoading}... please wait`}</p>
+        <p>{`Loading ${whatsLoading}... ${status}`}</p>
       </div>
 
     </div>

@@ -1,0 +1,47 @@
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.tools-comp {
+  width: 90%;
+  border-radius: 30px;
+  padding: 50px 40px;
+  background-color: var(--sec-bg);
+  margin: 30px auto;
+  color: white;
+}
+
+.tc-head {
+  text-align: center;
+}
+
+.tc-head p {
+  color: var(--grey-text);
+}
+
+.tc-main {
+  margin: 30px auto;
+}
+
+
+
+
+@media (max-width: 767px) {
+
+  .tools-comp {
+    border-radius: 15px;
+    padding-inline: 22px;
+    width: 98%;
+    padding: 30px 20px;
+  }
+
+  
+
+}
+
+
+
+

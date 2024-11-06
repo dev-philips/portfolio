@@ -1,10 +1,13 @@
 //DEPENDENCIES AND TOOLS
 import React, { useRef, useState } from 'react'
-import '../css/footer.css'
+
 import emailjs from '@emailjs/browser'
 
 //EXTRAS
 import lite_spark from '../assets/images/lite_spark.png'
+
+//COMPONENTS
+import '../css/footer.css'
 
 
 const Footer = () => {

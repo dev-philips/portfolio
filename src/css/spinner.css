@@ -33,6 +33,10 @@
   animation: spinner 1s linear infinite;
 }
 
+p {
+  text-align: center;
+}
+
 @keyframes spinner {
   from {
     transform: rotate(0);

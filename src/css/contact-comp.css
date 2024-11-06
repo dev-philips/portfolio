@@ -89,12 +89,12 @@
 }
 
 .sent-check {
-  color: white;
+  color: white !important;
   font-size: 40px;
 }
 
 .spin-loader {
-  color: white;
+  color: white !important;
   font-size: 40px;
   animation: spin 2s linear infinite;
 }

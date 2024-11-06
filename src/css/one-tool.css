@@ -1,0 +1,50 @@
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+
+.one-tool {
+  width: 100%;
+  padding: 8px 0;
+  margin: 15px 0;
+  gap: 10px;
+
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.ot-img-div {
+  background-color: black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ot-img-div img {
+  /* width: 80% !important; */
+}
+
+.ot-text-div {
+  text-align: start;
+}
+
+.ot-text-div p {
+  text-align: start;
+  color: var(--grey-text);
+}
+
+@media (max-width: 767px) {
+
+  .ot-img-div img {
+    width: 80px;
+  }
+
+  .ot-text-div p {
+    font-size: 14px;
+  }
+}
