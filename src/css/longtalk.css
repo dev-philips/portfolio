@@ -1,0 +1,8 @@
+p {
+  text-align: start !important;
+}
+
+.long-talk {
+  width: 90% !important;
+  margin: 20px auto;
+}

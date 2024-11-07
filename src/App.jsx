@@ -8,6 +8,7 @@ import Projects from './pages/Projects'
 import Tools from './pages/Tools'
 import Footer from './components/Footer'
 import Spinner from './components/Spinner'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Router>
               <Navbar />
               <main>
+                <ScrollToTop />
                 <Routes>
                   <Route path='/' element={<HomePage />} />
                   <Route path='/about-me' element={<AboutMe />} />

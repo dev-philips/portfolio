@@ -14,9 +14,12 @@ import ContactComp from '../components/ContactComp'
 //EXTRAS
 import Spinner from '../components/Spinner'
 import verified_image from '../assets/images/verified-2.png'
+import LongTalk from '../components/LongTalk'
 
 
 const AboutMe = () => {
+
+  const [networkError, setNetworkError] = useState(false)
 
   const [educations, setEducation] = useState([])
 
@@ -52,6 +55,7 @@ const AboutMe = () => {
         
       } catch (error) {
         console.log('Unable to fetch education on second trial:', error);
+        setNetworkError(true)
       }
     }
     
@@ -108,6 +112,7 @@ const AboutMe = () => {
         
       } catch (error) {
         console.log('Failed to fetch Experinces on second trial:', error);
+        setNetworkError(true)
       }
     }
   }
@@ -127,12 +132,15 @@ const AboutMe = () => {
     <>
       <OtherHero theText={`Hi, I’m Edun Philips, a 92 Years Old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={verified_image} />
       
+
+      <LongTalk talk1={'Over the years, I’ve honed my skills in creating seamless, pixel-perfect interfaces while keeping performance and accessibility top of mind. I’m constantly exploring new tools and technologies, such as Tailwind CSS and TypeScript, to ensure I’m delivering cutting-edge solutions.'} talk2={'Beyond the code, I thrive on solving complex problems, optimizing workflows, and working closely with designers and developers to build web applications that not only function flawlessly but also deliver an exceptional user experience.'} color={'white'} size={'20'} />
+
       <EducationComp>
 
         {
           loadingEducation ? (
             <>
-              <Spinner whatsLoading={'Education'} />
+              <Spinner whatsLoading={'Education'} status={`${ networkError ? 'Please check your internet connection' : 'Please wait' }`} />
             </>
           ) : (
             <>
@@ -153,7 +161,7 @@ const AboutMe = () => {
         {
           loadingExperience ? (
             <>
-              <Spinner whatsLoading={'Experiences'} />
+              <Spinner whatsLoading={'Experiences'} status={`${ networkError ? 'Please check your internet connection' : 'Please wait' }`}  />
             </>
           ) : (
             <>

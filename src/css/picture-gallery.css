@@ -1,0 +1,42 @@
+.picture-gallery {
+  width: 90% !important;
+  margin: 30px auto;
+  padding: 0;
+  height: 400px !important;
+  border: 2px solid green;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.track-one {
+  width: 47%;
+  height: 100%;
+  border: 3px solid blue;
+}
+
+.track-two {
+  width: 47%;
+  height: 100%;
+  border: 3px solid rebeccapurple;
+}
+
+.one-pic {
+  width: 90%;
+  height: 200px;
+  border: 2px solid red;
+  margin: 0 auto;
+
+  animation: track-one-up infinite linear 5s;
+}
+
+
+@keyframes track-one-up {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(200%);
+  }
+}

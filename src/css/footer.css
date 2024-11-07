@@ -22,6 +22,10 @@
   border-bottom: 2px solid var(--grey-text);
 }
 
+.footer-top p  {
+  text-align: center !important;
+}
+
 .footer-inner .footer-main .footer-top form {
   display: flex;
   justify-content: center;

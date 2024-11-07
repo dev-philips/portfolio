@@ -1,5 +1,11 @@
 
-/* -------------------------- */
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
 
 .home-section-two {
   width: 90%;
@@ -18,6 +24,7 @@
 .h-s2-head p {
   width: 80%;
   margin-inline: auto;
+  color: var(--grey-text);
 }
 
 .h-s2-main {
@@ -67,6 +74,8 @@
   .h-s2-head p {
     width: 100%;
     margin-inline: auto;
+    text-align: center !important;
+    color: var();
   }
 
   .h-s2-main {
@@ -75,29 +84,6 @@
 
   }
 
-  .one-exper {
-    flex-direction: column;
-  }
-
-  .call-to-action {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .cta-text {
-    width: 100%;
-  }
-
-  .cta-text > * {
-    margin: auto;
-    margin-bottom: 20px;
-  }
-
-  .cta-text p {
-    margin-bottom: 30px;
-  }
 }
 
 

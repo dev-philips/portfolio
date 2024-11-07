@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import '../css/navbar.css'
 import userImage from '../assets/images/philips.jpg'
@@ -7,6 +7,12 @@ import philips_resume from '../assets/philips-resume.pdf'
 const Navbar = () => {
 
   const location = useLocation()
+
+  const closeOcv = () => setOcvState('closed')
+
+  useEffect(() => {
+    closeOcv()
+  }, [location])
 
   const [ocvState, setOcvState] = useState(`closed`)
   const ocvRef = useRef()

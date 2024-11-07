@@ -8,6 +8,7 @@ import lite_spark from '../assets/images/lite_spark.png'
 
 //COMPONENTS
 import '../css/footer.css'
+import { Link } from 'react-router-dom'
 
 
 const Footer = () => {
@@ -117,9 +118,9 @@ const Footer = () => {
               <p>Quick Links</p>
 
               <ul>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Experiences</a></li>
-                <li><a href="">About me</a></li>
+                <li><Link to={'/projects'}>Projects</Link></li>
+                <li><Link to={'/about-me'}>About me</Link></li>
+                <li><Link to={'/tools'}>Tools</Link></li>
               </ul>
             </div>
 
@@ -138,7 +139,7 @@ const Footer = () => {
         </div>
 
         <div className='footer-footer'>
-          <p><i className='bx bx-copyright' ></i>  Philips O. Edun || Built with  <i className='bx bxs-heart'></i></p>
+          <p><i className='bx bx-copyright' ></i>  Philips O. Edun || Built with  <i className='bx bx-heart'></i></p>
         </div>
       </div>
     </div>
