@@ -3,7 +3,7 @@
 
 .home-hero {
   color: white;
-  width: 80%;
+  width: 90%;
   margin: 100px auto;
   display: flex;
   align-items: center;
@@ -83,28 +83,13 @@
 /* -------------------------- */
 
 
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1000px) {
-  .h-s2-main {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (max-width: 767px) {
   
   .home-hero {
     flex-direction: column;
     gap: 30px;
     margin: 50px auto;
+    width: 90% !important;
   }
 
   .home-hero .the-text {

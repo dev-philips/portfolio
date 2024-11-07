@@ -9,6 +9,7 @@ import Tools from './pages/Tools'
 import Footer from './components/Footer'
 import Spinner from './components/Spinner'
 import ScrollToTop from './components/ScrollToTop'
+import BookACall from './pages/BookACall'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
                   <Route path='/about-me' element={<AboutMe />} />
                   <Route path='/projects' element={<Projects />} />
                   <Route path='/tools' element={<Tools />} />
+                  <Route path='/book-a-call' element={<BookACall />} />
                 </Routes>
               </main>
               <Footer />

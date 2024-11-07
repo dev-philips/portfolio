@@ -90,12 +90,12 @@ const Footer = () => {
               <p>Tech Stack</p>
 
               <ul>
-                <li><a href="">ReactJS</a></li>
-                <li><a href="">VueJS</a></li>
-                <li><a href="">MongoDB</a></li>
-                <li><a href="">ExpressJs</a></li>
-                <li><a href="">JavaScript</a></li>
-                <li><a href="">NodeJs</a></li>
+                <li><a href="https://react.dev/">ReactJS</a></li>
+                <li><a href="https://vuejs.org/">VueJS</a></li>
+                <li><a href="https://www.mongodb.com/">MongoDB</a></li>
+                <li><a href="https://expressjs.com/">ExpressJs</a></li>
+                <li><a href="https://www.w3schools.com/js/js_intro.asp">JavaScript</a></li>
+                <li><a href="https://nodejs.org/en">NodeJs</a></li>
               </ul>
             </div>
 
@@ -104,13 +104,12 @@ const Footer = () => {
               <p>Socials</p>
 
               <ul>
-                <li><a href="">{ `X [Twitter]` }</a></li>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">GitHub</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Youtube</a></li>
-                <li><a href="">LinkedIn</a></li>
-                <li><a href="">GitHub</a></li>
+                <li><a href="https://www.x.com/philips_of_ng">{ `X [Twitter]` }</a></li>
+                <li><a href="https://web.facebook.com/profile.php?id=100074200946640">Facebook</a></li>
+                <li><a href="https://www.github.com/philips-of-ng">GitHub</a></li>
+                <li><a href="https://www.instagram.com/dev_philips">Instagram</a></li>
+                <li><a href="www.youtube.com/philipstv">Youtube</a></li>
+                <li><a href="https://www.linkedin.com/in/philips-edun-41613a295/">LinkedIn</a></li>
               </ul>
             </div>
 

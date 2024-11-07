@@ -1,0 +1,82 @@
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.book-a-call {
+  width: 90%;
+  margin: 20px auto;
+  /* background-color: rgb(30, 30, 30); */
+  padding: 20px 10px;
+
+  color: white;
+}
+
+.call-form {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.call-form h2 {
+  text-align: center;
+}
+
+.call-form p {
+  text-align: center !important;
+  color: var(--grey-text);
+}
+
+.one-input {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.one-input label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.one-input input {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--orange);
+  background-color: transparent;
+  color: white !important;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.call-form form button {
+  padding: 8px 25px;
+  color: white;
+  background-color: black;
+  border: 2px solid var(--orange);
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.one-input textarea {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  border: 2px solid var(--orange);
+  background-color: transparent;
+  color: white;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.form-submit {
+  display: flex;
+  align-items: center !important;
+}
+
+@media (max-width: 600px) {
+  .one-input {
+    width: 100%;
+  }
+}

@@ -2,9 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import '../css/navbar.css'
 import userImage from '../assets/images/philips.jpg'
-import philips_resume from '../assets/philips-resume.pdf'
+
+import philips_resume from 'https://drive.google.com/file/d/11cdfkv-oAgIexll2jm70WEo7FHVrKGqh/view?usp=sharing'
+
 
 const Navbar = () => {
+
+  console.log(philips_resume);
 
   const location = useLocation()
 
@@ -50,7 +54,7 @@ const Navbar = () => {
         </div>
 
         <div className="download-cv">
-          <a href="./DB/Philips' Resume.pdf">Download CV</a>
+          <a href="./DB/Philips' Resume.pdf" >Download CV</a>
         </div>
 
 

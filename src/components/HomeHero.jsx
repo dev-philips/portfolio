@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/homehero.css'
 import spark_image from '../assets/images/spark-2.png'
+import { Link } from 'react-router-dom'
 
 const HomeHero = () => {
 
@@ -18,7 +19,7 @@ const HomeHero = () => {
         <p className="available"><span></span>Available for projects</p>
 
         <div className="hero-btns">
-          <a className="call-btn" href="">Book a Call</a>
+          <Link className="call-btn" to={'/book-a-call'}>Book a Call</Link>
 
           <a className="hire-btn" href="">Hire Me </a>
         </div>
