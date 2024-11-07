@@ -169,6 +169,19 @@
   animation: spin 2s linear infinite;
 }
 
+
+.deactivate {
+  position: relative;
+}
+
+.deactivate::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  z-index: 2;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);

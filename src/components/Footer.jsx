@@ -17,6 +17,7 @@ const Footer = () => {
   const [submitedEmail, setSubmitedEmail] = useState(false)
   const [submiting, setSubmiting] = useState(false)
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
