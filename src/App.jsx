@@ -28,7 +28,7 @@ export default function App() {
                   <Route path='/projects' element={<Projects />} />
                   <Route path='/tools' element={<Tools />} />
                   <Route path='/book-a-call' element={<BookACall />} />
-                  <Route path='/projects/:projectPath' element={<OneProjectPage />} />
+                  <Route path='/projects/:projectId' element={<OneProjectPage />} />
                 </Routes>
               </main>
               <Footer />

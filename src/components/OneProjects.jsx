@@ -2,14 +2,14 @@ import React from 'react'
 import '../css/oneproject.css'
 import work_image from '../assets/images/job.jpg'
 
-import { Route, Router, RouterProvider, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const OneProject = ({ project }) => {
 
   const Navigate = useNavigate()
 
   const handleClick = () => {
-    const path = `/projects/${project.name.toLowerCase().replaceAll(' ', '-')}`
+    const path = `/projects/:${project.id}`
     Navigate(path)
   }
 

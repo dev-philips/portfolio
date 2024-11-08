@@ -1,0 +1,26 @@
+
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.one-project-page {
+  width: 90%;
+  border: 2px solid green;
+  margin: 20px auto;
+  color: var(--grey-text);
+}
+
+.one-project-page .top-level img {
+  width: 100%;
+  margin: 20px auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 2px solid var(--sec-bg);
+}
+
+.text-part {
+  
+}
