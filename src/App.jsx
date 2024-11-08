@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import Spinner from './components/Spinner'
 import ScrollToTop from './components/ScrollToTop'
 import BookACall from './pages/BookACall'
+import OneProjectPage from './pages/OneProjectPage'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
                   <Route path='/projects' element={<Projects />} />
                   <Route path='/tools' element={<Tools />} />
                   <Route path='/book-a-call' element={<BookACall />} />
+                  <Route path='/projects/:projectPath' element={<OneProjectPage />} />
                 </Routes>
               </main>
               <Footer />

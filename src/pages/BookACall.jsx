@@ -7,6 +7,7 @@ const BookACall = () => {
 
   const formRef = useRef()
 
+
   const [sendingMessage, setSendingMessage] = useState(false)
   const [sentMessage, setSentMessage] = useState(false)
 
@@ -43,6 +44,16 @@ const BookACall = () => {
 
   return (
     <div className='book-a-call'>
+
+      {/* <div className='the-modal'>
+        <div className='modal-content'>
+          <h1>Message Sent Successfully</h1>
+
+          <button className='form-submit'>Close</button>
+        </div>
+      </div> */}
+
+
       <div className='call-form'>
 
         <h2>Reach me</h2>

@@ -17,6 +17,7 @@ const Projects = () => {
 
   const [projects, setProjects] = useState([])
   const [loadingProjects, setLoadingProjects] = useState(false)
+  const [connectionError, setConnectionError] = useState(false)
 
   const fetchProjects = async () => {
 
@@ -53,6 +54,7 @@ const Projects = () => {
         }, 5000);
       } catch (secondError) {
         console.log('Failed to fetch projects after retrying', secondError);
+        setConnectionError(true)
       }
 
     }
@@ -76,7 +78,7 @@ const Projects = () => {
         {
           loadingProjects ? (
             <>
-              <Spinner whatsLoading={'Projects'} />
+              <Spinner whatsLoading={'Projects'} status={`${ connectionError ? 'Please check your internet connection' : 'Please wait' }`}  />
             </>
           ) : (
             <>
