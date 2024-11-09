@@ -1,37 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/one-project-page-comp.css'
+import CallToAction from '../components/CallToAction'
+// import project_image from '../assets/images/job.jpg'
 
-import project_image from '../assets/images/job.jpg'
+import Spinner from './Spinner'
 
 const OneProjectPageComp = ({ project }) => {
 
+  const [loading, setLoading] = useState(true)
 
-  if (!project) {
-    return <>
-      <p>Loading Project....</p>
-    </>
-  }
+  setInterval(() => {
+    setLoading(false)
+  }, 5000);
 
   return (
-    <div className='one-project-page'>
 
-      <div className='top-level'>
-        <h2>{ project.name }</h2>
 
-        <img src={project_image} alt="This is the project image lol" />
+    <div>
+      <div className='one-project-page'>
+        {
+          loading ? (
+            <>
+              <Spinner whatsLoading={'Project'} status={'Please wait'} />
+            </>
+          ) : (
+            <>
+              <div>
+                <div className='top-level'>
+                  <h2>{project.name}</h2>
+
+                  <img src={project.image} alt="This is the project image lol" />
+                </div>
+
+                {
+                  project.paragraphs?.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))
+                }
+
+                <span>To view the live version of this project,</span>   <span><a href={project.link}>Click here</a></span>
+              </div>
+
+            </>
+          )
+        }
       </div>
 
+        {/* <CallToAction /> */}
 
-      <p>{ project.paragraphOne }</p>
-
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eum sunt earum officiis illo dolorem fugiat. Odit enim dicta nisi autem, quos maiores dolor nihil quisquam beatae illo, tempora necessitatibus doloremque quo soluta id? Similique ex excepturi pariatur quia exercitationem?</p>
-
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et voluptas mollitia autem placeat perspiciatis quis fugiat suscipit exercitationem porro commodi, inventore rerum ab aut repellendus reiciendis, eius, sed necessitatibus earum modi. Praesentium laborum illo nihil, numquam quidem consectetur alias perspiciatis atque voluptatem tenetur, est doloribus laudantium sit labore, placeat deserunt.</p>
-
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatum optio placeat molestias. Atque omnis blanditiis quia officiis voluptatem, eveniet est minima enim quibusdam aliquid!
-
-      <span>To view the live version of this project,</span>   <span><a href="#">Click here</a></span>
     </div>
+
+
+
+
+
   )
 }
 

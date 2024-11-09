@@ -17,7 +17,7 @@ const OneProject = ({ project }) => {
     <div className="one-work-card" onClick={handleClick}>
       <div className="owc-img">
 
-        <img src={ work_image } alt="" />
+        <img src={ project.image ? project.image : work_image } alt="" />
 
       </div>
 

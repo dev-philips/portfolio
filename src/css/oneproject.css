@@ -3,22 +3,24 @@
   border: 1px solid #909090;
   padding: 10px;
   border-radius: 12px;
-  max-width: 500px;
-  margin-inline:  auto;
+  /* max-width: 500px; */
+  /* min-width: 300px; */
+  width: 95%;
+  margin-inline: auto;
 }
 
 .owc-img {
   border-radius: 12px;
-  width: 100%;
+  width: 100% !important;
   height: 250px;
   /* border: 2px solid green; */
 }
 
 .owc-img img {
-  width: 100%;
+  width: 100% !important;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover !important;
+  object-position: top !important;
   border-radius: inherit;
 }
 

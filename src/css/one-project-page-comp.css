@@ -8,13 +8,19 @@
 
 .one-project-page {
   width: 90%;
-  border: 2px solid green;
   margin: 20px auto;
   color: var(--grey-text);
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .one-project-page .top-level img {
   width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  object-position: top;
   margin: 20px auto;
   margin-bottom: 30px;
   border-radius: 10px;

@@ -47,7 +47,7 @@ const Navbar = () => {
           <ul>
             <li><Link to="/" className={`nav-link ${ location.pathname == '/' || location.pathname == '/home' ? "active-nav-link" :  '' }`}>Home</Link></li>
             <li><Link to="/about-me" className={`nav-link ${ location.pathname == '/about-me' || location.pathname == '/book-a-call' ? "active-nav-link" : '' }`}>About Me</Link></li>
-            <li><Link to="/projects" className={`nav-link ${ location.pathname == '/projects' ? "active-nav-link" : '' }`}>Projects</Link></li>
+            <li><Link to="/projects" className={`nav-link ${ location.pathname == '/projects' || location.pathname.startsWith('/projects') ? "active-nav-link" : '' }`}>Projects</Link></li>
             <li><Link to="/tools" className={`nav-link ${ location.pathname == '/tools' ? "active-nav-link" : '' }`}>Tools</Link></li>
           </ul>
         </div>
@@ -73,7 +73,7 @@ const Navbar = () => {
         <ul>
             <li><Link to="/" className={`nav-link ${ location.pathname == '/' || location.pathname == '/home' ? "active-nav-link" :  '' }`}>Home</Link></li>
             <li><Link to="/about-me" className={`nav-link ${ location.pathname == '/about-me' || location.pathname == '/book-a-call' ? "active-nav-link" : '' }`}>About Me</Link></li>
-            <li><Link to="/projects" className={`nav-link ${ location.pathname == '/projects' ? "active-nav-link" : '' }`}>Projects</Link></li>
+            <li><Link to="/projects" className={`nav-link ${ location.pathname == '/projects' || location.pathname.startsWith('/projects') ? "active-nav-link" : '' }`}>Projects</Link></li>
             <li><Link to="/tools" className={`nav-link ${ location.pathname == '/tools' ? "active-nav-link" : '' }`}>Tools</Link></li>
           </ul>
         </div>
