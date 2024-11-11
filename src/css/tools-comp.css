@@ -15,11 +15,12 @@
 }
 
 .tc-head {
-  text-align: center;
+  text-align: center !important;
 }
 
 .tc-head p {
   color: var(--grey-text);
+  text-align: center !important;
 }
 
 .tc-main {

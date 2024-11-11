@@ -14,7 +14,7 @@
 
   display: flex;
   justify-content: start;
-  align-items: start;
+  align-items: center;
 }
 
 .ot-img-div {
@@ -46,5 +46,9 @@
 
   .ot-text-div p {
     font-size: 14px;
+  }
+
+  .one-tool {
+    align-items: start !important;
   }
 }
