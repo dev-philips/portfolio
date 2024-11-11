@@ -7,14 +7,13 @@ import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects';
 import Tools from './pages/Tools';
 import Footer from './components/Footer';
-import Spinner from './components/Spinner';
 import ScrollToTop from './components/ScrollToTop';
 import BookACall from './pages/BookACall';
 import OneProjectPage from './pages/OneProjectPage';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/My-Portfolio">
       <Navbar />
       <main>
         <ScrollToTop />
