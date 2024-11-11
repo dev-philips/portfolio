@@ -21,7 +21,7 @@ const HomeHero = () => {
         <div className="hero-btns">
           <Link className="call-btn" to={'/book-a-call'}>Book a Call</Link>
 
-          <a className="hire-btn" href="">Hire Me </a>
+          <Link to={"/about-me#hire-me"} className="hire-btn" href="">Hire Me </Link>
         </div>
       </div>
 

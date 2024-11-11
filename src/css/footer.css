@@ -17,8 +17,9 @@
 }
 
 .footer-top {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   border-bottom: 2px solid var(--grey-text);
 }
 
@@ -30,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 
 .footer-top form input {
@@ -64,7 +65,7 @@
   flex-wrap: wrap;
   justify-content: space-between !important;
   gap: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .footer-main-main > div {
@@ -128,7 +129,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 40px 0;
   border-top: 2px solid var(--grey-text);
   text-align: center;
 }

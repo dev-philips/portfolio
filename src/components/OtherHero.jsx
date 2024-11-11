@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/other-hero.css'
 
 const OtherHero = ({pageTitle, theText, theSub, theImg, theGradText}) => {
+  
   return (
     <div className="home-hero">
 
