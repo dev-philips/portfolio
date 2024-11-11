@@ -40,6 +40,7 @@
   border-radius: 25px;
   border: none;
   outline: none;
+  min-width: 150px;
 }
 
 .footer-top p {

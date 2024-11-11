@@ -25,7 +25,7 @@ const OneProject = ({ project }) => {
 
         <div>
           <p>{ project.name }
-            <span>{ project.inProgress ? (<><i style={{color: 'greenyellow'}} className='bx bx-loader'></i></>) : '' } <i className='bx bxs-chevron-right'></i></span>
+            <span>{ project.inProgress ? (<><i title='Project in progress...' style={{color: 'greenyellow'}} className='bx bx-loader'></i></>) : '' } <i className='bx bxs-chevron-right'></i></span>
           </p>
           <span>{ project.stack }</span>
           
