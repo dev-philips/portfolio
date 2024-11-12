@@ -32,7 +32,8 @@ header {
   top: 0;
   max-width: 1100px !important;
   margin-inline: auto;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
   z-index: 100;
 }
 

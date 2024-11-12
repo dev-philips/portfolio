@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import BookACall from './pages/BookACall';
 import OneProjectPage from './pages/OneProjectPage';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/tools" element={<Tools />} />
           <Route path="/book-a-call" element={<BookACall />} />
           <Route path="/projects/:projectId" element={<OneProjectPage />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

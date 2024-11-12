@@ -3,18 +3,21 @@ import '../css/one-project-page.css'
 
 import project_image from '../assets/images/job.jpg'
 
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 import OneProjectPageComp from '../components/OneProjectPageComp'
 
 const OneProjectPage = () => {
 
+  const navigate = useNavigate()
+
   const { projectId } = useParams()
 
   const theProjectId = Number(projectId.replaceAll(':', ''))
 
-  const [fetchedProject, setFetchedProject] = useState()
+  const [fetchedProject, setFetchedProject] = useState([])
+  const [projectExists, setProjectExists] = useState(true)
   const [loadingProject, setLoadingProject] = useState(false)
   const [connectionError, setConnectionError] = useState(false)
 
@@ -54,9 +57,9 @@ const OneProjectPage = () => {
 
       setTimeout(() => {
         setLoadingProject(false)
+        setProjectExists(false)
+        useNavigate('*')
       }, 5000);
-
-
 
     }
 
@@ -78,7 +81,14 @@ const OneProjectPage = () => {
     <div>
       {
         <>
-          <OneProjectPageComp project={fetchedProject} />
+          {
+            projectExists && (
+              <>
+                <OneProjectPageComp project={fetchedProject} />
+              </>
+            )
+          }
+          
         </>
       }
     </div>
