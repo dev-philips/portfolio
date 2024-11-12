@@ -144,7 +144,7 @@
 .footer-footer > p {
   margin: 0;
   margin-left: 5px;
-  color: var(--yellow);
+  color: var(--yellow) !important;
   display: flex;
   align-items: center;
 }
