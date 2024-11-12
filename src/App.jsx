@@ -14,7 +14,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
-    <Router basename="/My-Portfolio">
+    <Router basename="/portfolio">
       <Navbar />
       <main>
         <ScrollToTop />
