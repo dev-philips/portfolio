@@ -58,7 +58,7 @@ const OneProjectPage = () => {
       setTimeout(() => {
         setLoadingProject(false)
         setProjectExists(false)
-        useNavigate('*')
+        navigate('*')
       }, 5000);
 
     }
