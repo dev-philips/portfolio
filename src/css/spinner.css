@@ -6,7 +6,7 @@
 }
 
 .spinner-container {
-  height: 200px;
+  height: 200px !important;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -35,6 +35,7 @@
 
 p {
   text-align: center !important;
+  color: white !important;
 }
 
 .spinner-container div p {

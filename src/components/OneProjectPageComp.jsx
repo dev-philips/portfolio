@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../css/one-project-page-comp.css'
 import CallToAction from '../components/CallToAction'
-// import project_image from '../assets/images/job.jpg'
+import project_image from '../assets/images/job.jpg'
 
 import Spinner from './Spinner'
 
@@ -29,7 +29,7 @@ const OneProjectPageComp = ({ project }) => {
                 <div className='top-level'>
                   <h2>{project.name}</h2>
 
-                  <img src={project.image} alt="This is the project image lol" />
+                  <img src={project.image ? project.image : project_image} alt="This is the project image lol" />
                 </div>
 
                 {

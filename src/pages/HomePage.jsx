@@ -24,8 +24,13 @@ const HomePage = () => {
       setLoadingProjects(true)
       const response = await axios.get(api)
       const allProjects = await response.data.record.projects
+
+      //DEBUGGING CODE
       console.log(allProjects);
+      
       setProjects(allProjects)
+
+      //DEBUGGING CODE
       console.log('Fetched Projects', projects);
 
       setTimeout(() => {
@@ -33,8 +38,8 @@ const HomePage = () => {
       }, 5000);
 
     } catch (error) {
+      //DEBUGGING CODE
       console.log('Error occured, retrying in 2 seconds');
-
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -42,8 +47,13 @@ const HomePage = () => {
         setLoadingProjects(true)
         const response = await axios.get(api)
         const allProjects = await response.data.record.projects
+
+        //DEBUGGING CODE
         console.log(allProjects);
+
         setProjects(allProjects)
+
+        //DEBUGGING CODE
         console.log('Fetched Projects (2nd Trial)', projects);
 
         setTimeout(() => {
@@ -61,12 +71,12 @@ const HomePage = () => {
     fetchProjects()
   }, [])
 
-  useEffect(() => {
-    console.log('Updated Projects in State:', projects);
-  }, [projects]);
+  //DEBUGGING CODE
 
-  //THE FOLLOWING CODE IS USED TO FETCH EXPERINCES
-  //THE FOLLOWING CODE IS USED TO FETCH EXPERINCES
+  // useEffect(() => {
+  //   console.log('Updated Projects in State:', projects);
+  // }, [projects]);
+
   //THE FOLLOWING CODE IS USED TO FETCH EXPERINCES
 
   const [experiences, setExperiences] = useState([])
@@ -79,8 +89,12 @@ const HomePage = () => {
       setLoadingExperiences(true)
       const response = await axios.get(api)
       const allExperiences = response.data.record.experiences
+
+      //DEBUGGING CODE
       console.log(allExperiences);
       setExperiences(allExperiences)
+
+      //DEBUGGING CODE
       console.log('Fetched Experiences on 1st trial:', experiences);
 
       setTimeout(() => {
@@ -88,16 +102,23 @@ const HomePage = () => {
       }, 5000);
 
     } catch (error) {
+
+      //DEBUGGING CODE
       console.log('Error fetching experiences on first trial:', error);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       try {
         setLoadingExperiences(true)
+
         const response = await axios.get(api)
         const allExperiences = response.data.record.experiences
+
+        //DEBUGGING CODE 
         console.log(allExperiences);
         setExperiences(allExperiences)
+
+        //DEBUGGING CODE 
         console.log('Fetched experiences on 2nd trial:', experiences);
         
         setTimeout(() => {
@@ -105,6 +126,7 @@ const HomePage = () => {
         }, 5000);
         
       } catch (error) {
+       //DEBUGGING CODE 
         console.log('Failed to fetch Experinces on second trial:', error);
       }
     }
@@ -114,9 +136,11 @@ const HomePage = () => {
     fetchExperience()
   }, [])
 
-  useEffect(() => {
-    console.log('Updated experinces in the state', experiences);
-  }, [])
+  //DEBUGGING CODE 
+
+  // useEffect(() => {
+  //   console.log('Updated experinces in the state', experiences);
+  // }, [])
 
 
 
@@ -128,6 +152,8 @@ const HomePage = () => {
           loadingProjects ? (
             <>
               <Spinner whatsLoading={'Projects'} status={ `${ internetError ? 'Please check your internet connection' : 'Please wait' }` } />
+
+
               {/* {
                 internetError ? (
                   <>
@@ -139,6 +165,8 @@ const HomePage = () => {
                   </>
                 )
               } */}
+
+
             </>
           ) : (
             <>

@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 import OneProjectPageComp from '../components/OneProjectPageComp'
+import Spinner from '../components/Spinner'
 
 const OneProjectPage = () => {
 
@@ -17,9 +18,8 @@ const OneProjectPage = () => {
   const theProjectId = Number(projectId.replaceAll(':', ''))
 
   const [fetchedProject, setFetchedProject] = useState([])
-  const [projectExists, setProjectExists] = useState(true)
   const [loadingProject, setLoadingProject] = useState(false)
-  const [connectionError, setConnectionError] = useState(false)
+
 
   const fetchTheProject = async () => {
 
@@ -57,7 +57,6 @@ const OneProjectPage = () => {
 
       setTimeout(() => {
         setLoadingProject(false)
-        setProjectExists(false)
         navigate('*')
       }, 5000);
 
@@ -78,19 +77,23 @@ const OneProjectPage = () => {
 
 
   return (
-    <div>
-      {
-        <>
-          {
-            projectExists && (
-              <>
-                <OneProjectPageComp project={fetchedProject} />
-              </>
-            )
-          }
-          
-        </>
-      }
+    <div className='one-project-page'>
+
+      <>
+        {
+          loadingProject ? (
+            <>
+              <Spinner whatsLoading={'Project'} status={'Please wait'} />
+            </>
+          ) : (
+            <>
+              <OneProjectPageComp project={fetchedProject} />
+            </>
+          )
+        }
+
+      </>
+
     </div>
   )
 }
