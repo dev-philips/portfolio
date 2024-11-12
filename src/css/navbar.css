@@ -23,7 +23,6 @@ body {
 }
 
 header {
-  width: 100vw;
   height: 65px;
   padding: 30px 0 !important;
   display: flex;
