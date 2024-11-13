@@ -1,13 +1,16 @@
+//Dependencies
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+
+//Components
 import HomeHero from '../components/HomeHero'
 import WorksAndProjects from '../components/WorksAndProjects'
 import OneProject from '../components/OneProjects'
 import ExperienceComp from '../components/ExperienceComp'
 import OneExperience from '../components/OneExperience'
 import CallToAction from '../components/CallToAction'
-
-import axios from 'axios'
 import Spinner from '../components/Spinner'
+import FakeWAP from '../components/FakeWAP'
 
 const HomePage = () => {
 
@@ -147,6 +150,42 @@ const HomePage = () => {
   return (
     <>
       <HomeHero />
+
+      {
+        loadingProjects ? (
+          <FakeWAP />
+        ) : internetError ? (
+          <>
+            <WorksAndProjects>
+              <Spinner whatsLoading={'Projects'} status={'Please check your internet connection'} />
+            </WorksAndProjects>
+          </>
+        ) : (
+          <>
+            <WorksAndProjects>
+              {
+                loadingProjects ? (
+                  <>
+                    <Spinner whatsLoading={'Projects'} status={'Please wait'} />
+                  </>
+                ) : (
+                  <>
+                    {
+                      projects.map((project, index) => {
+                        return (
+                          <OneProject project={project} key={index} />
+                        )
+                      })
+                    }
+                  </>
+                )
+              }
+            </WorksAndProjects>
+          </>
+        )
+      }
+
+
       <WorksAndProjects>
         {
           loadingProjects ? (
@@ -154,7 +193,7 @@ const HomePage = () => {
               <Spinner whatsLoading={'Projects'} status={ `${ internetError ? 'Please check your internet connection' : 'Please wait' }` } />
 
 
-              {/* {
+              {
                 internetError ? (
                   <>
                     <p>Please check your internet connection</p>
@@ -164,7 +203,7 @@ const HomePage = () => {
                     ''
                   </>
                 )
-              } */}
+              }
 
 
             </>
