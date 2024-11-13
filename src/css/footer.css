@@ -109,7 +109,7 @@
 }
 
 .f-link-row p {
-  color: var(--grey-text);
+  color: var(--grey-text) !important;
   font-size: 14px;
   text-align: start;
 }
