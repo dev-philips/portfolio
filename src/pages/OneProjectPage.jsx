@@ -1,13 +1,16 @@
+//DEPENDENCIES
 import React, { useEffect, useState } from 'react'
-import '../css/one-project-page.css'
-
-import project_image from '../assets/images/job.jpg'
-
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
+//COMPONENTS
+import '../css/one-project-page.css'
 import OneProjectPageComp from '../components/OneProjectPageComp'
 import Spinner from '../components/Spinner'
+
+//EXTRAS
+import project_image from '../assets/images/job.jpg'
+
 
 const OneProjectPage = () => {
 
@@ -30,10 +33,7 @@ const OneProjectPage = () => {
       setLoadingProject(true)
       const response = await axios.get(api)
       const allProjects = response.data.record.projects
-      console.log('These are all the projects', allProjects);
       const theProject = allProjects[theProjectId]
-      console.log('This is the single project', theProject);
-
       setFetchedProject(theProject)
 
       setTimeout(() => {
@@ -42,37 +42,26 @@ const OneProjectPage = () => {
 
 
     } catch (error) {
-      console.log('Error fetching the project at 1st trial', error);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       setLoadingProject(true)
       const response = await axios.get(api)
       const allProjects = response.data.record.projects
-      console.log('These are all the projects', allProjects);
       const theProject = allProjects[theProjectId]
-      console.log('This is the single project', theProject);
 
       setFetchedProject(theProject)
 
       setTimeout(() => {
         setLoadingProject(false)
-        navigate('*')
       }, 5000);
 
     }
 
   }
 
-
   useEffect(() => {
     fetchTheProject()
-  }, [projectId])
-
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('Updated Single Project in the state', fetchedProject);
-    }, 5000);
   }, [projectId])
 
 

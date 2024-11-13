@@ -1,13 +1,15 @@
+//DEPENDENCIES
 import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 
+//COMPONENTS
 import '../css/book-a-call.css'
 
 const BookACall = () => {
 
   const formRef = useRef()
 
-
+  const [messageError, setMessageError] = useState(false)
   const [sendingMessage, setSendingMessage] = useState(false)
   const [sentMessage, setSentMessage] = useState(false)
 
@@ -19,7 +21,6 @@ const BookACall = () => {
 
       emailjs.sendForm('service_sx7tqx4', 'template_wonl12j', formRef.current, '37C25JUTR-ncVG2C-')
       .then((result) => {
-        console.log('Message sent successfully!');
         
         setTimeout(() => {
           setSentMessage(true)
@@ -31,12 +32,12 @@ const BookACall = () => {
 
       })
       .catch((error) => {
-        console.log('Error sending message', error);
+        setMessageError(true)
       })
 
       
     } catch (error) {
-      
+      setMessageError(true)
     }
     
   }
@@ -87,7 +88,11 @@ const BookACall = () => {
             {
               sendingMessage ? (
                 <>
-                  <i class='bx bx-loader spin-loader' ></i>
+                  <i className='bx bx-loader spin-loader' ></i>
+                </>
+              ) : messageError ? (
+                <>
+                  <i className='bx bx-message-error sent-error'></i>
                 </>
               ) : sentMessage ? (
                 <>

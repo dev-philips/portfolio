@@ -28,21 +28,13 @@ const HomePage = () => {
       const response = await axios.get(api)
       const allProjects = await response.data.record.projects
 
-      //DEBUGGING CODE
-      console.log(allProjects);
-      
       setProjects(allProjects)
-
-      //DEBUGGING CODE
-      console.log('Fetched Projects', projects);
 
       setTimeout(() => {
         setLoadingProjects(false)
       }, 5000);
 
     } catch (error) {
-      //DEBUGGING CODE
-      console.log('Error occured, retrying in 2 seconds');
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -51,13 +43,7 @@ const HomePage = () => {
         const response = await axios.get(api)
         const allProjects = await response.data.record.projects
 
-        //DEBUGGING CODE
-        console.log(allProjects);
-
         setProjects(allProjects)
-
-        //DEBUGGING CODE
-        console.log('Fetched Projects (2nd Trial)', projects);
 
         setTimeout(() => {
           setLoadingProjects(false)
@@ -74,11 +60,7 @@ const HomePage = () => {
     fetchProjects()
   }, [])
 
-  //DEBUGGING CODE
-
-  // useEffect(() => {
-  //   console.log('Updated Projects in State:', projects);
-  // }, [projects]);
+  
 
   //THE FOLLOWING CODE IS USED TO FETCH EXPERINCES
 
@@ -93,21 +75,13 @@ const HomePage = () => {
       const response = await axios.get(api)
       const allExperiences = response.data.record.experiences
 
-      //DEBUGGING CODE
-      console.log(allExperiences);
       setExperiences(allExperiences)
-
-      //DEBUGGING CODE
-      console.log('Fetched Experiences on 1st trial:', experiences);
 
       setTimeout(() => {
         setLoadingExperiences(false)
       }, 5000);
 
     } catch (error) {
-
-      //DEBUGGING CODE
-      console.log('Error fetching experiences on first trial:', error);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -117,20 +91,14 @@ const HomePage = () => {
         const response = await axios.get(api)
         const allExperiences = response.data.record.experiences
 
-        //DEBUGGING CODE 
-        console.log(allExperiences);
         setExperiences(allExperiences)
 
-        //DEBUGGING CODE 
-        console.log('Fetched experiences on 2nd trial:', experiences);
-        
         setTimeout(() => {
           setLoadingExperiences(false)
         }, 5000);
-        
+
       } catch (error) {
-       //DEBUGGING CODE 
-        console.log('Failed to fetch Experinces on second trial:', error);
+        setInternetError(true)
       }
     }
   }
@@ -139,26 +107,23 @@ const HomePage = () => {
     fetchExperience()
   }, [])
 
-  //DEBUGGING CODE 
-
-  // useEffect(() => {
-  //   console.log('Updated experinces in the state', experiences);
-  // }, [])
-
-
-
+ 
   return (
     <>
       <HomeHero />
 
       {
         loadingProjects ? (
-          <FakeWAP />
+          <>
+            <FakeWAP>
+              <Spinner whatsLoading={'Projects'} status={'Please wait'} />
+            </FakeWAP>
+          </>
         ) : internetError ? (
           <>
-            <WorksAndProjects>
+            <FakeWAP>
               <Spinner whatsLoading={'Projects'} status={'Please check your internet connection'} />
-            </WorksAndProjects>
+            </FakeWAP>
           </>
         ) : (
           <>
@@ -186,50 +151,11 @@ const HomePage = () => {
       }
 
 
-      <WorksAndProjects>
-        {
-          loadingProjects ? (
-            <>
-              <Spinner whatsLoading={'Projects'} status={ `${ internetError ? 'Please check your internet connection' : 'Please wait' }` } />
-
-
-              {
-                internetError ? (
-                  <>
-                    <p>Please check your internet connection</p>
-                  </>
-                ) : (
-                  <>
-                    ''
-                  </>
-                )
-              }
-
-
-            </>
-          ) : (
-            <>
-              {
-                projects.map((project, index) => {
-                  return (
-                    <OneProject key={index} project={project} />
-                  )
-                })
-              }
-            </>
-          )
-        }
-
-
-      </WorksAndProjects>
-
-      
-
       <ExperienceComp>
         {
           loadingExperience ? (
             <>
-             <Spinner whatsLoading={'Experiences'} status={ `${ internetError ? 'Please check your internet connection' : 'Please wait' }` } />
+              <Spinner whatsLoading={'Experiences'} status={`${internetError ? 'Please check your internet connection' : 'Please wait'}`} />
             </>
           ) : (
             <>

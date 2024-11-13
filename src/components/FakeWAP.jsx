@@ -1,7 +1,7 @@
 import react from 'react'
 import Spinner from '../components/Spinner'
 
-const FakeWAP = () => {
+const FakeWAP = ({ children }) => {
   return (
     <>
       <div className="works-and-projects">
@@ -11,10 +11,10 @@ const FakeWAP = () => {
           <p>Check out some of my projects where I’ve crafted sleek, responsive websites and web applications.</p>
         </div>
 
-
-
         <div className="fake-wap-main">
-          <Spinner whatsLoading={'Projects'} status={'Please wait'} />
+          {
+            children
+          }
         </div>
 
       </div>

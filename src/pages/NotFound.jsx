@@ -1,6 +1,9 @@
+//DEPENDENCIES
 import React from 'react'
-import '../css/error-page.css'
 import { Link } from 'react-router-dom'
+
+//COMPONENTS
+import '../css/error-page.css'
 
 const NotFound = () => {
   return (

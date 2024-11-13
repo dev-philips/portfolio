@@ -93,6 +93,11 @@
   font-size: 40px;
 }
 
+.sent-error {
+  color: red;
+  font-size: 40px;
+}
+
 .spin-loader {
   color: white !important;
   font-size: 40px;

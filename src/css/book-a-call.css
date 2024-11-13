@@ -75,6 +75,11 @@
   align-items: center !important;
 }
 
+.sent-error {
+  color: red;
+  font-size: 40px;
+}
+
 @media (max-width: 600px) {
   .one-input {
     width: 100%;
@@ -83,7 +88,7 @@
 
 
 
-.the-modal {
+/* .the-modal {
   width: 100%;
   height: 50vh;
   text-align: center;
@@ -100,4 +105,4 @@
 .modal-content {
   border: 2px solid red;
   width: 100% !important;
-}
+} */

@@ -25,6 +25,8 @@ const AboutMe = () => {
 
   const [loadingEducation, setLoadingEducation] = useState(false)
 
+  //THE CODE BELOW IS USED TO FETCH EDUCATION
+  
   const fetchEducation = async () => {
 
     const api = 'https://api.jsonbin.io/v3/b/6728b681acd3cb34a8a26161'
@@ -33,28 +35,23 @@ const AboutMe = () => {
       setLoadingEducation(true)
       const response = await axios.get(api)
       const allEducation = response.data.record.education
-      console.log(allEducation);
       setEducation(allEducation)
-      console.log('Fetched Education:', educations);
       
       setTimeout(() => {
         setLoadingEducation(false)
       }, 5000);
       
     } catch (error) {
-      console.log('Error fetching education on first trial:', error);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
       try {
+
         const response = await axios.get(api)
         const allEducation = response.data.record.education
-        console.log(allEducation);
         setEducation(allEducation)
-        console.log('Fetched Education on 2nd trial:', educations);
         
       } catch (error) {
-        console.log('Unable to fetch education on second trial:', error);
         setNetworkError(true)
       }
     }
@@ -65,14 +62,8 @@ const AboutMe = () => {
     fetchEducation()
   }, [])
 
-  useEffect(() => {
-    console.log('Updated Education in the state:', educations);
-  }, [])
 
 
-
-  // THE CODE BELOW IS USED TO FETCH EXPERIENCES
-  // THE CODE BELOW IS USED TO FETCH EXPERIENCES
   // THE CODE BELOW IS USED TO FETCH EXPERIENCES
   
   const [experiences, setExperiences] = useState([])
@@ -85,16 +76,13 @@ const AboutMe = () => {
       setLoadingExperiences(true)
       const response = await axios.get(api)
       const allExperiences = response.data.record.experiences
-      console.log(allExperiences);
       setExperiences(allExperiences)
-      console.log('Fetched Experiences on 1st trial:', experiences);
 
       setTimeout(() => {
         setLoadingExperiences(false)
       }, 5000);
 
     } catch (error) {
-      console.log('Error fetching experiences on first trial:', error);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -102,16 +90,13 @@ const AboutMe = () => {
         setLoadingExperiences(true)
         const response = await axios.get(api)
         const allExperiences = response.data.record.experiences
-        console.log(allExperiences);
         setExperiences(allExperiences)
-        console.log('Fetched experiences on 2nd trial:', experiences);
         
         setTimeout(() => {
           setLoadingExperiences(false)
         }, 5000);
         
       } catch (error) {
-        console.log('Failed to fetch Experinces on second trial:', error);
         setNetworkError(true)
       }
     }
@@ -120,12 +105,6 @@ const AboutMe = () => {
   useEffect(() => {
     fetchExperience()
   }, [])
-
-  useEffect(() => {
-    console.log('Updated experinces in the state', experiences);
-  }, [])
-
-
 
 
   return (
