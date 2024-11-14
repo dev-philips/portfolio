@@ -11,6 +11,7 @@ import ScrollToTop from './components/ScrollToTop';
 import BookACall from './pages/BookACall';
 import OneProjectPage from './pages/OneProjectPage';
 import NotFound from './pages/NotFound';
+import UploadInfo from './pages/UploadInfo';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/book-a-call" element={<BookACall />} />
           <Route path="/projects/:projectId" element={<OneProjectPage />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/admin-only' element={<UploadInfo />} />
         </Routes>
       </main>
       <Footer />

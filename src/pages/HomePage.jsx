@@ -21,12 +21,18 @@ const HomePage = () => {
 
   const fetchProjects = async () => {
 
-    const api = 'https://api.jsonbin.io/v3/b/6728b681acd3cb34a8a26161'
+    const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
+    const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
     try {
       setLoadingProjects(true)
-      const response = await axios.get(api)
-      const allProjects = await response.data.record.projects
+      const response = await axios.get(api, {
+        headers: {
+          'X-Master-Key': `${apiKey}`
+        }
+      })
+      const allProjects = await response.data.record
+      console.log(allProjects);
 
       setProjects(allProjects)
 
@@ -36,21 +42,26 @@ const HomePage = () => {
 
     } catch (error) {
 
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      console.log('Failed to fetched on 1st trial', error);
+      
+
+      await new Promise((resolve) => setTimeout(resolve, 3000));
 
       try {
         setLoadingProjects(true)
-        const response = await axios.get(api)
-        const allProjects = await response.data.record.projects
-
+        const response = await axios.get(api, {
+          headers: {
+            'X-Master-Key': `${apiKey}`
+          }
+        })
+        const allProjects = await response.data.record
         setProjects(allProjects)
 
         setTimeout(() => {
           setLoadingProjects(false)
         }, 5000);
       } catch (secondError) {
-        console.log('Failed to fetch projects after retrying', secondError);
-        setInternetError(true)
+        setConnectionError(true)
       }
 
     }
@@ -60,7 +71,7 @@ const HomePage = () => {
     fetchProjects()
   }, [])
 
-  
+
 
   //THE FOLLOWING CODE IS USED TO FETCH EXPERINCES
 
@@ -68,12 +79,17 @@ const HomePage = () => {
   const [loadingExperience, setLoadingExperiences] = useState(false)
 
   const fetchExperience = async () => {
-    const api = 'https://api.jsonbin.io/v3/b/6728b681acd3cb34a8a26161'
+    const api = 'https://api.jsonbin.io/v3/b/6735cc87acd3cb34a8a8759c'
+    const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
     try {
       setLoadingExperiences(true)
-      const response = await axios.get(api)
-      const allExperiences = response.data.record.experiences
+      const response = await axios.get(api, {
+        headers: {
+          'X-Maaster-Key': `${apiKey}`
+        }
+      })
+      const allExperiences = response.data.record
 
       setExperiences(allExperiences)
 
@@ -88,8 +104,12 @@ const HomePage = () => {
       try {
         setLoadingExperiences(true)
 
-        const response = await axios.get(api)
-        const allExperiences = response.data.record.experiences
+        const response = await axios.get(api, {
+          headers: {
+            'X-Master-Key': `${apiKey}`
+          }
+        })
+        const allExperiences = response.data.record
 
         setExperiences(allExperiences)
 
@@ -107,7 +127,7 @@ const HomePage = () => {
     fetchExperience()
   }, [])
 
- 
+
   return (
     <>
       <HomeHero />
@@ -163,7 +183,7 @@ const HomePage = () => {
                 experiences.map((experience, index) => {
                   return (
                     <>
-                      <OneExperience experience={experience} />
+                      <OneExperience key={index} experience={experience} />
                     </>
                   )
                 })

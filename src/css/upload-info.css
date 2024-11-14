@@ -1,0 +1,12 @@
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.page-head {
+  width: 90%;
+  margin: 20px auto;
+  color: white;
+}
