@@ -11,8 +11,7 @@ import ScrollToTop from './components/ScrollToTop';
 import BookACall from './pages/BookACall';
 import OneProjectPage from './pages/OneProjectPage';
 import NotFound from './pages/NotFound';
-import UploadInfo from './pages/UploadInfo';
-
+import UploadInfo from './admin/admin-pages/UploadInfo';
 export default function App() {
   return (
     <Router basename="/portfolio">

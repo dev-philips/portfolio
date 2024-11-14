@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import '../css/new-project.css'
+import '../../css/new-project.css'
 import axios from 'axios'
 
 const NewProject = () => {

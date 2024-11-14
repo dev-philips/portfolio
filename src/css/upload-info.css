@@ -10,3 +10,78 @@
   margin: 20px auto;
   color: white;
 }
+
+
+.password-page {
+  width: 90%;
+  margin: 20px auto;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-page > div {
+  width: 100%;
+  margin: auto !important;
+}
+
+.password-page > div h2 {
+  color: white;
+  text-align: center;
+}
+
+.password-page > div p {
+  color: white;
+  text-align: center !important;
+}
+
+.password-page > div form {
+  width: 100%;
+  margin: auto !important;
+}
+
+form .pw-input {
+  width: 90%;
+  margin: auto;
+  height: 40px;
+  border: 2px solid var(--orange);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1d1d1d;
+  padding: 8px 10px;
+  border-radius: 35px;
+
+  box-sizing: content-box;
+}
+
+.pw-input input {
+  width: 80%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: white;
+}
+
+.pw-input i {
+  color: white;
+  font-size: 35px;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-page div form button {
+  padding: 10px 20px;
+  border: 2px solid var(--orange);
+  border-radius: 25px;
+  display: block;
+  margin: 20px auto;
+  background-color: var(--orange);
+  color: white;
+}
