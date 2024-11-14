@@ -36,7 +36,7 @@ const NewProject = () => {
   const sendData = async e => {
     e.preventDefault()
 
-    const api = 'https://api.jsonbin.io/v3/b/6735cc87acd3cb34a8a8759c'
+    const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
     const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
     function convertProgress(string) {
@@ -51,12 +51,12 @@ const NewProject = () => {
 
 
     const dataObject = {
-      name: nameRef.current.value,
-      id: Number(idRef.current.value),
-      image: imageRef.current.value,
-      stack: stackRef.current.value,
-      inProgress: convertProgress(inProgressRef.current.value),
-      link: linkRef.current.value,
+      name: nameRef.current.value.trim(),
+      id: Number(idRef.current.value.trim()),
+      image: imageRef.current.value.trim(),
+      stack: stackRef.current.value.trim(),
+      inProgress: convertProgress(inProgressRef.current.value.trim()),
+      link: linkRef.current.value.trim(),
       paragraphs: paragraphs
     }
 
@@ -73,7 +73,7 @@ const NewProject = () => {
 
       const currentData = response.data.record
 
-      currentData.push(dataObject)
+      currentData.push()
 
       const updateResponse = await axios.put(api, { record: currentData }, {
         headers: {
