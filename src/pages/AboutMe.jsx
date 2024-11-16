@@ -29,11 +29,16 @@ const AboutMe = () => {
   
   const fetchEducation = async () => {
 
-    const api = 'https://api.jsonbin.io/v3/b/6728b681acd3cb34a8a26161'
+    const api = 'https://api.jsonbin.io/v3/b/6735cb9fe41b4d34e4543bb5'
+    const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
     try {
       setLoadingEducation(true)
-      const response = await axios.get(api)
+      const response = await axios.get(api, {
+        headers: {
+          'X-Master-Key': `${apiKey}`
+        }
+      })
       const allEducation = response.data.record.education
       setEducation(allEducation)
       
@@ -70,11 +75,16 @@ const AboutMe = () => {
   const [loadingExperience, setLoadingExperiences] = useState(false)
 
   const fetchExperience = async () => {
-    const api = 'https://api.jsonbin.io/v3/b/6728b681acd3cb34a8a26161'
+    const api = 'https://api.jsonbin.io/v3/b/6735cc87acd3cb34a8a8759c'
+    const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
     try {
       setLoadingExperiences(true)
-      const response = await axios.get(api)
+      const response = await axios.get(api, {
+        headers: {
+          'X-Master-Key': `${apiKey}`
+        }
+      })
       const allExperiences = response.data.record.experiences
       setExperiences(allExperiences)
 

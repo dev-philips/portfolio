@@ -14,10 +14,13 @@ import FakeWAP from '../components/FakeWAP'
 
 const HomePage = () => {
 
+  const num = [1, 2, 3]
+
   const [internetError, setInternetError] = useState(false)
 
   const [projects, setProjects] = useState([])
   const [loadingProjects, setLoadingProjects] = useState(false)
+
 
   const fetchProjects = async () => {
 
@@ -26,13 +29,19 @@ const HomePage = () => {
 
     try {
       setLoadingProjects(true)
+
       const response = await axios.get(api, {
         headers: {
           'X-Master-Key': `${apiKey}`
         }
       })
-      const allProjects = await response.data.record
+      const allProjects = await response.data.record.projects
+
       console.log(allProjects);
+
+      console.log(num[0]);
+
+
 
       setProjects(allProjects)
 
@@ -43,7 +52,7 @@ const HomePage = () => {
     } catch (error) {
 
       console.log('Failed to fetched on 1st trial', error);
-      
+
 
       await new Promise((resolve) => setTimeout(resolve, 3000));
 
@@ -54,7 +63,9 @@ const HomePage = () => {
             'X-Master-Key': `${apiKey}`
           }
         })
-        const allProjects = await response.data.record
+        const allProjects = await response.data.record.projects
+
+
         setProjects(allProjects)
 
         setTimeout(() => {
@@ -86,10 +97,10 @@ const HomePage = () => {
       setLoadingExperiences(true)
       const response = await axios.get(api, {
         headers: {
-          'X-Maaster-Key': `${apiKey}`
+          'X-Master-Key': `${apiKey}`
         }
       })
-      const allExperiences = response.data.record
+      const allExperiences = response.data.record.record.experiences
 
       setExperiences(allExperiences)
 
@@ -109,7 +120,7 @@ const HomePage = () => {
             'X-Master-Key': `${apiKey}`
           }
         })
-        const allExperiences = response.data.record
+        const allExperiences = response.data.record.experiences
 
         setExperiences(allExperiences)
 
@@ -149,19 +160,15 @@ const HomePage = () => {
           <>
             <WorksAndProjects>
               {
-                loadingProjects ? (
-                  <>
-                    <Spinner whatsLoading={'Projects'} status={'Please wait'} />
-                  </>
+                projects && Array.isArray(projects) ? (
+                  projects.map((project, index) => {
+                    return (
+                      <OneProject project={project} key={index} />
+                    )
+                  })
                 ) : (
                   <>
-                    {
-                      projects.map((project, index) => {
-                        return (
-                          <OneProject project={project} key={index} />
-                        )
-                      })
-                    }
+                    <p className='text-center'>Unable to fetch projects</p>
                   </>
                 )
               }
@@ -180,13 +187,19 @@ const HomePage = () => {
           ) : (
             <>
               {
-                experiences.map((experience, index) => {
-                  return (
-                    <>
-                      <OneExperience key={index} experience={experience} />
-                    </>
-                  )
-                })
+                experiences && Array.isArray(experiences) ? (
+                  experiences.map((experience, index) => {
+                    return (
+                      <>
+                        <OneExperience key={index} experience={experience} />
+                      </>
+                    )
+                  })
+                ) : (
+                  <>
+                    <p>Unable to fetch experiences</p>
+                  </>
+                )
               }
             </>
           )

@@ -8,6 +8,10 @@ const UploadInfo = () => {
   const [authorized, setAuthorized] = useState(false)
   const [verifying, setVerifying] = useState(false)
   const [accessDenied, setAccessDenied] = useState(false)
+  
+  //AESTETHICS
+  const [greenKey, setGreenKey] = useState('white-key')
+  const [redKey, setRedKey] = useState('white-key')
 
   const passwordRef = useRef()
   const modelPassword = 'thehighisglorious'
@@ -18,6 +22,7 @@ const UploadInfo = () => {
     setVerifying(true)
 
     if (passwordRef.current.value == modelPassword) {
+      setGreenKey('green-key')
 
       setTimeout(() => {
         setAuthorized(true)
@@ -25,6 +30,7 @@ const UploadInfo = () => {
       }, 3000);
 
     } else {
+      setRedKey('red-key')
 
       setTimeout(() => {
         setAccessDenied(true)
@@ -32,6 +38,7 @@ const UploadInfo = () => {
 
         setTimeout(() => {
           setAccessDenied(false)
+          setRedKey('white-key')
         }, 5000);
 
       }, 2000);
@@ -65,7 +72,7 @@ const UploadInfo = () => {
                 {
                   accessDenied ? (
                     <>
-                      <p style={{color: 'red'}}>Incorrect Password. Access Denied!</p>
+                      <p className='warning'>Incorrect Password. Access Denied!</p>
                     </>
                   ) : (
                     <>
@@ -73,14 +80,16 @@ const UploadInfo = () => {
                     </>
                   )
                 }
+
+                
                 
                 <form onSubmit={GrantAccess}>
                   <div className='pw-input'>
                     <input ref={passwordRef} type="password" placeholder='Input Password' required />
-                    <i className='bx bx-lock'></i>
+                    <i className={`${greenKey == 'green-key' ? 'green-key' : redKey == 'red-key' ? 'red-key' : 'white-key'} bx bx-lock`}></i>
                   </div>
 
-                  <button type='submit'>
+                  <button className='sec-btn' type='submit'>
                     {
                       verifying ? (
                         <>

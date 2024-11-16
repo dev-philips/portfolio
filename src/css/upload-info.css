@@ -14,6 +14,7 @@
 
 .password-page {
   width: 90%;
+  max-width: 500px;
   margin: 20px auto;
   min-height: 40vh;
   display: flex;
@@ -84,4 +85,38 @@ form .pw-input {
   margin: 20px auto;
   background-color: var(--orange);
   color: white;
+  width: 160px;
+  height: 50px;
+}
+
+.warning {
+  color: red !important;
+}
+
+.green-key {
+  animation: green-key 0.2s infinite linear;
+}
+
+.red-key {
+  animation: red-key 0.2s infinite linear;
+}
+
+@keyframes red-key {
+  from {
+    color: white;
+  }
+
+  to {
+    color: red;
+  }
+}
+
+@keyframes green-key {
+  from {
+    color: white;
+  }
+
+  to {
+    color: greenyellow;
+  }
 }

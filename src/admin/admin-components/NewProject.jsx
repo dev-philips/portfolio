@@ -14,6 +14,7 @@ const NewProject = () => {
   const [uploadingProject, setUploadingProject] = useState(false)
   const [projectUploaded, setProjectUploaded] = useState(false)
 
+
   const [paragraphs, setParagraphs] = useState([])
   const [paragraphInput, setParagraphInput] = useState('')
 
@@ -36,19 +37,17 @@ const NewProject = () => {
   const sendData = async e => {
     e.preventDefault()
 
-    const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
+
+     const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
     const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
     function convertProgress(string) {
-
-      if (string.toLowerCase().trim() == 'true') {
-        return true
-      } else if (string.toLowerCase().trim() == 'false') {
-        return false
-      }
-
+      const lowerTrimmed = string.toLowerCase().trim();
+      if (lowerTrimmed === 'true') return true;
+      if (lowerTrimmed === 'false') return false;
+      return false; // Default to `false` for invalid inputs
     }
-
+    
 
     const dataObject = {
       name: nameRef.current.value.trim(),
@@ -71,9 +70,11 @@ const NewProject = () => {
         }
       })
 
-      const currentData = response.data.record
-
-      currentData.push()
+      const currentData = await response.data.record
+      console.log('is record an array?', currentData);
+      currentData.push(dataObject)
+      console.log('After the push', currentData);
+      
 
       const updateResponse = await axios.put(api, { record: currentData }, {
         headers: {
@@ -82,6 +83,7 @@ const NewProject = () => {
       })
 
       console.log('Project Added Successfully', updateResponse.data);
+
       setUploadingProject(false)
 
     } catch (error) {
