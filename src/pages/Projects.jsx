@@ -25,6 +25,11 @@ const Projects = () => {
     const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
     const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-Master-Key': apiKey
+    }
+
     try {
       setLoadingProjects(true)
       const response = await axios.get(api, {
@@ -32,7 +37,7 @@ const Projects = () => {
           'X-Master-Key': `${apiKey}`
         }
       })
-      const allProjects = await response.data.record
+      const allProjects = await response.data.record.record
       console.log(allProjects);
       
       setProjects(allProjects)

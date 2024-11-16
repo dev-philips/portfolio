@@ -14,8 +14,6 @@ import FakeWAP from '../components/FakeWAP'
 
 const HomePage = () => {
 
-  const num = [1, 2, 3]
-
   const [internetError, setInternetError] = useState(false)
 
   const [projects, setProjects] = useState([])
@@ -27,22 +25,17 @@ const HomePage = () => {
     const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
     const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-Master-Key': apiKey
+    }
+
     try {
       setLoadingProjects(true)
 
-      const response = await axios.get(api, {
-        headers: {
-          'X-Master-Key': `${apiKey}`
-        }
-      })
-      const allProjects = await response.data.record.projects
-
-      console.log(allProjects);
-
-      console.log(num[0]);
-
-
-
+      const response = await axios.get(api, { headers })
+      const allProjects = await response.data.record.record
+      console.log('These are the projects from the API',allProjects);
       setProjects(allProjects)
 
       setTimeout(() => {
@@ -58,15 +51,10 @@ const HomePage = () => {
 
       try {
         setLoadingProjects(true)
-        const response = await axios.get(api, {
-          headers: {
-            'X-Master-Key': `${apiKey}`
-          }
-        })
-        const allProjects = await response.data.record.projects
+        const response = await axios.get(api, { headers })
+        const allProjects = await response.data.record.record
 
-
-        setProjects(allProjects)
+        setProjects('Project fetched on second trial', allProjects)
 
         setTimeout(() => {
           setLoadingProjects(false)
@@ -81,6 +69,11 @@ const HomePage = () => {
   useEffect(() => {
     fetchProjects()
   }, [])
+
+  useEffect(() => {
+    console.log('Fetched Projects from the State', projects);
+
+  }, [projects])
 
 
 
@@ -101,6 +94,7 @@ const HomePage = () => {
         }
       })
       const allExperiences = response.data.record.record.experiences
+      console.log(allExperiences);
 
       setExperiences(allExperiences)
 

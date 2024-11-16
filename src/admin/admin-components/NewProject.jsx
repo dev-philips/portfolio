@@ -34,21 +34,86 @@ const NewProject = () => {
     }
   }
 
-  const sendData = async e => {
-    e.preventDefault()
+  // const sendData = async e => {
+  //   e.preventDefault()
 
+  //   const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
+  //   const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
 
-     const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34'
-    const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC'
-
-    function convertProgress(string) {
-      const lowerTrimmed = string.toLowerCase().trim();
-      if (lowerTrimmed === 'true') return true;
-      if (lowerTrimmed === 'false') return false;
-      return false; // Default to `false` for invalid inputs
-    }
+  //   const headers = {
+  //     'Content-Type': 'application/json',
+  //     'X-Master-Key': apiKey
+  //   }
     
 
+  //   function convertProgress(string) {
+  //     const lowerTrimmed = string.toLowerCase().trim();
+  //     if (lowerTrimmed === 'true') return true;
+  //     if (lowerTrimmed === 'false') return false;
+  //     return false; // Default to `false` for invalid inputs
+  //   }
+
+
+  //   const dataObject = {
+  //     name: nameRef.current.value.trim(),
+  //     id: Number(idRef.current.value.trim()),
+  //     image: imageRef.current.value.trim(),
+  //     stack: stackRef.current.value.trim(),
+  //     inProgress: convertProgress(inProgressRef.current.value.trim()),
+  //     link: linkRef.current.value.trim(),
+  //     paragraphs: paragraphs
+  //   }
+
+  //   console.log('This the project data to be sent to the API', dataObject);
+
+
+  //   try {
+  //     setUploadingProject(true)
+
+  //     const { data: fetchedData } = await axios.get(api, { headers })
+  //     const oldProjects = fetchedData.record;
+
+  //     // const currentData = await response.data.record
+  //     // console.log('is record an array?', currentData);
+  //     // currentData.push(dataObject)
+  //     // console.log('After the push', currentData);
+
+  //     const updatedProjects = [...oldProjects, dataObject];
+
+
+  //     const updateResponse = await axios.put(api, { record: updatedProjects }, { headers })
+  //     console.log('Projects successfully updated', updateResponse.data);
+      
+
+  //     console.log('Project Added Successfully', updateResponse.data);
+
+  //     setUploadingProject(false)
+
+  //   } catch (error) {
+  //     console.log('Error adding your project', error);
+  //     setUploadingProject(false)
+  //   }
+
+  // }
+
+  const sendData = async (e) => {
+    e.preventDefault();
+  
+    // const api = 'https://api.jsonbin.io/v3/b/6735ce36e41b4d34e4543d34';
+
+    const api = 'https://api.jsonbin.io/v3/b/67391867e41b4d34e4557d3f'
+    const apiKey = '$2a$10$30xtUuMAzq12Czec931me.xyVO8.7lHdJT40ZPgsWQP9FtSnPneQC';
+  
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-Master-Key': apiKey,
+    };
+  
+    function convertProgress(string) {
+      const lowerTrimmed = string.toLowerCase().trim();
+      return lowerTrimmed === 'true';
+    }
+  
     const dataObject = {
       name: nameRef.current.value.trim(),
       id: Number(idRef.current.value.trim()),
@@ -56,42 +121,41 @@ const NewProject = () => {
       stack: stackRef.current.value.trim(),
       inProgress: convertProgress(inProgressRef.current.value.trim()),
       link: linkRef.current.value.trim(),
-      paragraphs: paragraphs
-    }
-
-    console.log('This the project data to be sent to the API', dataObject);
-
-
+      paragraphs: paragraphs,
+    };
+  
+    console.log('This is the project data to be sent to the API:', dataObject);
+  
     try {
-      setUploadingProject(true)
-      const response = await axios.get(api, {
-        headers: {
-          'X-Master-Key': `${apiKey}`
-        }
-      })
-
-      const currentData = await response.data.record
-      console.log('is record an array?', currentData);
-      currentData.push(dataObject)
-      console.log('After the push', currentData);
-      
-
-      const updateResponse = await axios.put(api, { record: currentData }, {
-        headers: {
-          'X-Master-Key': `${apiKey}`
-        }
-      })
-
-      console.log('Project Added Successfully', updateResponse.data);
-
-      setUploadingProject(false)
-
+      setUploadingProject(true);
+  
+      // Fetch existing data
+      const { data: fetchedData } = await axios.get(api, { headers });
+      const oldProjects = fetchedData.record; // Fallback to an empty array if `record` is undefined
+  
+      if (!Array.isArray(oldProjects)) {
+        throw new Error('Fetched data is not an array');
+      }
+  
+      // Add the new project
+      const updatedProjects = [...oldProjects, dataObject];
+  
+      // Push updated projects
+      const updateResponse = await axios.put(
+        api,
+        { record: updatedProjects },
+        { headers }
+      );
+  
+      console.log('Projects successfully updated:', updateResponse.data);
+  
+      setUploadingProject(false);
     } catch (error) {
-      console.log('Error adding your project', error);
-      setUploadingProject(false)
+      console.error('Error adding your project:', error.message || error);
+      setUploadingProject(false);
     }
-
-  }
+  };
+  
 
 
 
