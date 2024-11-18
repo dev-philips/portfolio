@@ -12,6 +12,9 @@ import BookACall from './pages/BookACall';
 import OneProjectPage from './pages/OneProjectPage';
 import NotFound from './pages/NotFound';
 import UploadInfo from './admin/admin-pages/UploadInfo';
+import OneAlbumPage from './pages/OneAlbumPage';
+
+
 export default function App() {
   return (
     <Router basename="/portfolio">
@@ -25,8 +28,8 @@ export default function App() {
           <Route path="/tools" element={<Tools />} />
           <Route path="/book-a-call" element={<BookACall />} />
           <Route path="/projects/:projectId" element={<OneProjectPage />} />
-          
-          {/* <Route path='/projects/:albumId' element={<OneAlbumPage />} /> */}
+
+          <Route path='/album' element={<OneAlbumPage />} />
 
           <Route path='*' element={<NotFound />} />
           <Route path='/admin-only' element={<UploadInfo />} />
