@@ -25,6 +25,9 @@ export default function App() {
           <Route path="/tools" element={<Tools />} />
           <Route path="/book-a-call" element={<BookACall />} />
           <Route path="/projects/:projectId" element={<OneProjectPage />} />
+          
+          {/* <Route path='/projects/:albumId' element={<OneAlbumPage />} /> */}
+
           <Route path='*' element={<NotFound />} />
           <Route path='/admin-only' element={<UploadInfo />} />
         </Routes>
