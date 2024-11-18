@@ -1,0 +1,35 @@
+
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+}
+
+.album-comp {
+  background-color: var(--sec-bg);
+  width: 90%;
+  padding: 50px 40px;
+  margin: 40px auto;
+  border-radius: 30px;
+}
+
+.album-comp .ac-head {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.album-comp .ac-body {
+  width: 100% !important;
+  display: flex;
+  scrollbar-width: none;
+  align-items: baseline;
+  padding: 20px 0;
+  overflow: scroll;
+  gap: 20px;
+}
+
+.album-comp .fake-ac-body {
+  justify-content: center;
+}
+

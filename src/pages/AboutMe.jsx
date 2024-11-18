@@ -10,11 +10,14 @@ import CallToAction from '../components/CallToAction'
 import EducationComp from '../components/EducationComp'
 import OneEducation from '../components/OneEducation'
 import ContactComp from '../components/ContactComp'
+import AlbumComp from '../components/AlbumComp'
 
 //EXTRAS
 import Spinner from '../components/Spinner'
 import verified_image from '../assets/images/verified-2.png'
 import LongTalk from '../components/LongTalk'
+import OneAlbum from '../components/OneAlbum'
+import FakeALC from '../components/FakeALC'
 
 
 const AboutMe = () => {
@@ -26,7 +29,7 @@ const AboutMe = () => {
   const [loadingEducation, setLoadingEducation] = useState(false)
 
   //THE CODE BELOW IS USED TO FETCH EDUCATION
-  
+
   const fetchEducation = async () => {
 
     const api = 'https://api.jsonbin.io/v3/b/6735cb9fe41b4d34e4543bb5'
@@ -41,11 +44,11 @@ const AboutMe = () => {
       })
       const allEducation = response.data.record.education
       setEducation(allEducation)
-      
+
       setTimeout(() => {
         setLoadingEducation(false)
       }, 5000);
-      
+
     } catch (error) {
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -55,12 +58,12 @@ const AboutMe = () => {
         const response = await axios.get(api)
         const allEducation = response.data.record.education
         setEducation(allEducation)
-        
+
       } catch (error) {
         setNetworkError(true)
       }
     }
-    
+
   }
 
   useEffect(() => {
@@ -70,7 +73,7 @@ const AboutMe = () => {
 
 
   // THE CODE BELOW IS USED TO FETCH EXPERIENCES
-  
+
   const [experiences, setExperiences] = useState([])
   const [loadingExperience, setLoadingExperiences] = useState(false)
 
@@ -101,11 +104,11 @@ const AboutMe = () => {
         const response = await axios.get(api)
         const allExperiences = response.data.record.experiences
         setExperiences(allExperiences)
-        
+
         setTimeout(() => {
           setLoadingExperiences(false)
         }, 5000);
-        
+
       } catch (error) {
         setNetworkError(true)
       }
@@ -117,10 +120,77 @@ const AboutMe = () => {
   }, [])
 
 
+  const [albums, setAlbums] = useState([])
+  const [loadingAlbums, setLoadingAlbums] = useState(false)
+  const [albumError, setAlbumError] = useState(false)
+
+  const fetchAlbums = async () => {
+    try {
+
+      setLoadingAlbums(true)
+
+      //GETTING THE ACCESS TOKEN
+
+      const tokenResponse = await axios.post("https://accounts.spotify.com/api/token",
+        new URLSearchParams({ grant_type: 'client_credentials' }),
+        {
+          headers: {
+            Authorization: `Basic ${btoa("3439fb00a69a4381a1c257a5bfc918f2:082147efedcb4e8e85c4a913add2ec9d")}`,
+            "Content-Type": "application/x-www-form-urlencoded",
+          }
+        }
+      );
+
+      const accessToken = tokenResponse.data.access_token
+
+      //GETING THE ALBUMS
+
+
+      const adedamola_fireboy = '0mxle2p72zngkE9p4KAE0A'
+      const playboy_fireboy = '1pUJnA3OSbvVr5afqxNARZ'
+      const twiceastall_burnaboy = '2pANu4qucnliJuRR94eZSV'
+      const glorysoundprep_jonbellion = '59YYObx9wFEFG5zVdlfwvf'
+
+      // const albumIds = `${adedamola_fireboy,twiceastall_burnaboy, playboy_fireboy,glorysoundprep_jonbellion}`
+
+      const albumIds = '0mxle2p72zngkE9p4KAE0A,1pUJnA3OSbvVr5afqxNARZ,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
+
+      const albumResponse = await axios.get(`https://api.spotify.com/v1/albums?ids=${albumIds}`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`
+        }
+      })
+
+      const allAlbums = albumResponse.data.albums
+
+      console.log(allAlbums);
+
+      setAlbums(allAlbums)
+
+      setTimeout(() => {
+        setLoadingAlbums(false)
+      }, 2000);
+
+    } catch (error) {
+      console.log('Error fetching your albums', error);
+      setAlbumError(true)
+      setLoadingAlbums(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchAlbums()
+  }, [])
+
+  useEffect(() => {
+    console.log('Updated albums coming from the state', albums);
+  }, [])
+
+
   return (
     <>
-      <OtherHero theText={`Hi, I’m Edun Philips, a 19 Years Old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={verified_image} />
-      
+      <OtherHero theText={`Hi, I’m Edun Philips, a 99 Years Old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={verified_image} />
+
 
       <LongTalk talk1={'Over the years, I’ve honed my skills in creating seamless, pixel-perfect interfaces while keeping performance and accessibility top of mind. I’m constantly exploring new tools and technologies, such as Tailwind CSS and TypeScript, to ensure I’m delivering cutting-edge solutions.'} talk2={'Beyond the code, I thrive on solving complex problems, optimizing workflows, and working closely with designers and developers to build web applications that not only function flawlessly but also deliver an exceptional user experience.'} color={'white'} size={'20'} />
 
@@ -129,7 +199,7 @@ const AboutMe = () => {
         {
           loadingEducation ? (
             <>
-              <Spinner whatsLoading={'Education'} status={`${ networkError ? 'Please check your internet connection' : 'Please wait' }`} />
+              <Spinner whatsLoading={'Education'} status={`${networkError ? 'Please check your internet connection' : 'Please wait'}`} />
             </>
           ) : (
             <>
@@ -150,7 +220,7 @@ const AboutMe = () => {
         {
           loadingExperience ? (
             <>
-              <Spinner whatsLoading={'Experiences'} status={`${ networkError ? 'Please check your internet connection' : 'Please wait' }`}  />
+              <Spinner whatsLoading={'Experiences'} status={`${networkError ? 'Please check your internet connection' : 'Please wait'}`} />
             </>
           ) : (
             <>
@@ -169,6 +239,35 @@ const AboutMe = () => {
       </ExperienceComp>
 
       <ContactComp id="hire-me" />
+
+      {
+        loadingAlbums ? (
+          <>
+            <FakeALC />
+          </>
+        ) : (
+          <AlbumComp>
+            {
+              albumError ? (
+                <>
+                  <Spinner whatsLoading={'Albums'} status={'Please check your internet connection'} />
+                </>
+              ) : (
+                <>
+                  {
+                    albums.map((album, index) => {
+                      return (
+                        <OneAlbum album={album} key={index} />
+                      )
+                    })
+                  }
+                </>
+              )
+            }
+          </AlbumComp>
+        )
+      }
+
 
       <CallToAction />
     </>

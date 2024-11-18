@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --orange: #ff7e5f;
+  --yellow: #F4B400;
+  --sec-bg: #1d1d1d;
+  --grey-text: #ccc0c0;
+  --spotify-green:  #1db954;
+}
+
+.one-album {
+  border: 2px solid green;
+  padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.album-img {
+  width: 100% !important;
+}
+
+.one-album .album-img img {
+  border-radius: 8px;
+}
+
+.one-album .album-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+}
+
+.album-name {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+.artist-name {
+  color: var(--grey-text);
+  margin: 0;
+}
+
+.play-btn a {
+  border: none;
+  background: transparent;
+}
+
+.play-btn a i {
+  color: var(--spotify-green);
+  font-size: 40px;
+}
