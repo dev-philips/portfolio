@@ -33,3 +33,11 @@
   justify-content: center;
 }
 
+
+@media (max-width: 767px) {
+  .album-comp {
+    width: 95%;
+    padding: 30px 20px;
+  }
+}
+

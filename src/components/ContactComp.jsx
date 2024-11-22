@@ -29,6 +29,8 @@ const ContactComp = () => {
 
       setSendingMessage(true)
 
+      emailjs.sendForm()
+
       emailjs.sendForm("service_sx7tqx4", "template_wonl12j", messageRef.current, '37C25JUTR-ncVG2C-')
         .then((result) => {
           console.log('Sent')

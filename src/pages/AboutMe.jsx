@@ -23,9 +23,7 @@ import FakeALC from '../components/FakeALC'
 const AboutMe = () => {
 
   const [networkError, setNetworkError] = useState(false)
-
   const [educations, setEducation] = useState([])
-
   const [loadingEducation, setLoadingEducation] = useState(false)
 
   //THE CODE BELOW IS USED TO FETCH EDUCATION
