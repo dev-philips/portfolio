@@ -35,23 +35,13 @@ const OneProjectPage = () => {
     }
 
     try {
-
       setLoadingProject(true)
       const response = await axios.get(api, { headers })
-      
       const allProjects = response.data.record.record
       console.log(allProjects);
-      
-
       const theProject = allProjects.find(project => project.id == theProjectId)
-
       setFetchedProject(theProject)
-
-      setTimeout(() => {
-        setLoadingProject(false)
-      }, 5000);
-
-
+      setLoadingProject(false)
     } catch (error) {
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -63,9 +53,7 @@ const OneProjectPage = () => {
 
       setFetchedProject(theProject)
 
-      setTimeout(() => {
-        setLoadingProject(false)
-      }, 5000);
+      setLoadingProject(false)
 
     }
 

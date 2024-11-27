@@ -35,17 +35,12 @@ const HomePage = () => {
 
       const response = await axios.get(api, { headers })
       const allProjects = await response.data.record.record
-      console.log('These are the projects from the API',allProjects);
+      console.log('These are the projects from the API', allProjects);
       setProjects(allProjects)
-
-      setTimeout(() => {
-        setLoadingProjects(false)
-      }, 5000);
-
+      setLoadingProjects(false)
     } catch (error) {
 
       console.log('Failed to fetched on 1st trial', error);
-
 
       await new Promise((resolve) => setTimeout(resolve, 3000));
 
@@ -53,12 +48,8 @@ const HomePage = () => {
         setLoadingProjects(true)
         const response = await axios.get(api, { headers })
         const allProjects = await response.data.record.record
-
         setProjects('Project fetched on second trial', allProjects)
-
-        setTimeout(() => {
-          setLoadingProjects(false)
-        }, 5000);
+        setLoadingProjects(false)
       } catch (secondError) {
         setConnectionError(true)
       }
@@ -97,11 +88,7 @@ const HomePage = () => {
       console.log(allExperiences);
 
       setExperiences(allExperiences)
-
-      setTimeout(() => {
-        setLoadingExperiences(false)
-      }, 5000);
-
+      setLoadingExperiences(false)
     } catch (error) {
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -115,13 +102,8 @@ const HomePage = () => {
           }
         })
         const allExperiences = response.data.record.experiences
-
         setExperiences(allExperiences)
-
-        setTimeout(() => {
-          setLoadingExperiences(false)
-        }, 5000);
-
+        setLoadingExperiences(false)
       } catch (error) {
         setInternetError(true)
       }

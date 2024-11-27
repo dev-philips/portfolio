@@ -42,11 +42,7 @@ const AboutMe = () => {
       })
       const allEducation = response.data.record.education
       setEducation(allEducation)
-
-      setTimeout(() => {
-        setLoadingEducation(false)
-      }, 5000);
-
+      setLoadingEducation(false)
     } catch (error) {
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -56,7 +52,7 @@ const AboutMe = () => {
         const response = await axios.get(api)
         const allEducation = response.data.record.education
         setEducation(allEducation)
-
+        setLoadingEducation(false)
       } catch (error) {
         setNetworkError(true)
       }
@@ -88,11 +84,7 @@ const AboutMe = () => {
       })
       const allExperiences = response.data.record.experiences
       setExperiences(allExperiences)
-
-      setTimeout(() => {
-        setLoadingExperiences(false)
-      }, 5000);
-
+      setLoadingExperiences(false)
     } catch (error) {
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -102,11 +94,7 @@ const AboutMe = () => {
         const response = await axios.get(api)
         const allExperiences = response.data.record.experiences
         setExperiences(allExperiences)
-
-        setTimeout(() => {
-          setLoadingExperiences(false)
-        }, 5000);
-
+        setLoadingExperiences(false)
       } catch (error) {
         setNetworkError(true)
       }
@@ -151,7 +139,7 @@ const AboutMe = () => {
 
       // const albumIds = `${adedamola_fireboy,twiceastall_burnaboy, playboy_fireboy,glorysoundprep_jonbellion}`
 
-      const albumIds = '6z6r9RgyDDp35cfOAixpvq,2O9VJaLSnwjZ2HPpMaVoPU,0mxle2p72zngkE9p4KAE0A,1pUJnA3OSbvVr5afqxNARZ,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
+      const albumIds = '1pUJnA3OSbvVr5afqxNARZ,6z6r9RgyDDp35cfOAixpvq,2O9VJaLSnwjZ2HPpMaVoPU,0mxle2p72zngkE9p4KAE0A,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
 
       const albumResponse = await axios.get(`https://api.spotify.com/v1/albums?ids=${albumIds}`, {
         headers: {
