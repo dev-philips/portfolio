@@ -149,7 +149,7 @@ const AboutMe = () => {
 
       const allAlbums = albumResponse.data.albums
 
-      console.log(allAlbums);
+      console.log('These are the albums', allAlbums);
 
       setAlbums(allAlbums)
 
@@ -230,24 +230,22 @@ const AboutMe = () => {
         loadingAlbums ? (
           <>
             <FakeALC>
-              <Spinner whatsLoading={'Albums'} status={'Please wait...'} />
+              <Spinner whatsLoading={'Albums'} status={'Please wait'} />
             </FakeALC>
           </>
         ) : albumError ? (
           <>
             <FakeALC>
-              <Spinner whatsLoading={'Albums'} status={'Please check your internet connection...'} />
+              <Spinner whatsLoading={'Albums'} status={'Please check your internet connection'} />
             </FakeALC>
           </>
         ) : (
           <>
             <AlbumComp>
               {
-                albums.map((index, album) => {
+                albums.map((album) => {
                   return (
-                    <>
-                      <OneAlbum album={album} key={index} />
-                    </>
+                    <OneAlbum key={album.id} album={album} />
                   )
                 })
               }

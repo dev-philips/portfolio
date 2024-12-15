@@ -4,7 +4,7 @@ import '../css/album-comp.css'
 import Spinner from './Spinner'
 
 
-const FakeALC = () => {
+const FakeALC = ({ children }) => {
   return (
     <div className='album-comp'>
 
@@ -14,7 +14,7 @@ const FakeALC = () => {
       </div>
 
       <div className='fake-ac-body'>
-        <Spinner whatsLoading={'Albums'} status={'Please wait'} />
+        { children }
       </div>
 
     </div>
