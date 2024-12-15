@@ -1,0 +1,9 @@
+.one-album-page-comp {
+
+}
+
+.one-album-page-comp .album-cover {
+  width: 100%;
+  max-height: 350px;
+}
+

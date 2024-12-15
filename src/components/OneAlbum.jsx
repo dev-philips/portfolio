@@ -1,10 +1,14 @@
 import React from "react";
 import "../css/one-album.css";
 import album_cover from "../assets/images/album.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const OneAlbum = ({ album }) => {
+
+  const navigate = useNavigate()
+
   return (
-    <div className="one-album">
+    <div className="one-album" onClick={() => navigate('/albums/:albumId')}>
 
       <div className="album-img">
         <img

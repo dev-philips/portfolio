@@ -1,9 +1,17 @@
 import React from 'react'
+import '../css/one-album-page-comp.css'
+
 
 const OneAlbumPageComp = () => {
   return (
     <div className='one-album-page-comp'>
-      OneAlbumPageComp
+      <div className='album-cover'>
+
+      </div>
+
+      <div className='album-talk'>
+
+      </div>
     </div>
   )
 }
