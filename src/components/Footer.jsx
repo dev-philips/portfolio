@@ -106,7 +106,6 @@ const Footer = () => {
 
               <ul>
                 <li><a href="https://www.x.com/philips_of_ng">{ `X [Twitter]` }</a></li>
-                <li><a href="https://web.facebook.com/profile.php?id=100074200946640">Facebook</a></li>
                 <li><a href="https://www.github.com/philips-of-ng">GitHub</a></li>
                 <li><a href="https://www.instagram.com/dev_philips">Instagram</a></li>
                 <li><a href="www.youtube.com/philipstv">Youtube</a></li>
