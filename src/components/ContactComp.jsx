@@ -66,7 +66,7 @@ const ContactComp = () => {
 
         <a href="https://wa.me/08129248289" target='_blank' className='one-c-link'><img src={whatsapp_icon} alt="" /> +234 8129248289</a>
 
-        <a href="https://www.instagram.com/dev_philips" target='_blank' className='one-c-link'><img src={instagram_icon} alt="" /> dev_philips</a>
+        <a href="https://www.instagram.com/philips_edun" target='_blank' className='one-c-link'><img src={instagram_icon} alt="" /> philips_edun</a>
 
         <a href="mailto:philipsedun@gmail.com" target='_blank' className='one-c-link'><img src={email_icon} alt="" /> philipsedun@gmail.com</a>
 
