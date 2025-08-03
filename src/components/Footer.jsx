@@ -107,7 +107,7 @@ const Footer = () => {
               <ul>
                 <li><a href="https://www.x.com/philips_of_ng">{ `X [Twitter]` }</a></li>
                 <li><a href="https://www.github.com/philips-of-ng">GitHub</a></li>
-                <li><a href="https://www.instagram.com/dev_philips">Instagram</a></li>
+                <li><a href="https://www.instagram.com/philips_edun">Instagram</a></li>
                 <li><a href="www.youtube.com/philipstv">Youtube</a></li>
                 <li><a href="https://www.linkedin.com/in/philips-edun-41613a295/">LinkedIn</a></li>
               </ul>

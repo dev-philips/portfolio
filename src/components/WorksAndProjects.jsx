@@ -35,8 +35,7 @@ const WorksAndProjects = ({ children }) => {
 
         {children}
 
-        {/* THIS IS SUPPOSE TO CONTAIN THE CHILDREN THAT IS, THE PROJECTS */}
-
+        {/*THIS IS SUPPOSE TO CONTAIN THE CHILDREN THAT IS, THE PROJECTS*/}
       </div>
 
 
