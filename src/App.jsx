@@ -17,25 +17,32 @@ import OneAlbumPage from './pages/OneAlbumPage';
 
 export default function App() {
   return (
-    <Router basename="/portfolio">
-      <Navbar />
-      <main>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about-me" element={<AboutMe />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/tools" element={<Tools />} />
-          <Route path="/book-a-call" element={<BookACall />} />
-          <Route path="/projects/:projectId" element={<OneProjectPage />} />
+    <div className='whole-app'>
 
-          <Route path='/album' element={<OneAlbumPage />} />
+      <div className='glow'>
 
-          <Route path='*' element={<NotFound />} />
-          <Route path='/admin-only' element={<UploadInfo />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+      </div>
+
+      <Router basename="/portfolio">
+        <Navbar />
+        <main>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-me" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/book-a-call" element={<BookACall />} />
+            <Route path="/projects/:projectId" element={<OneProjectPage />} />
+
+            <Route path='/album' element={<OneAlbumPage />} />
+
+            <Route path='*' element={<NotFound />} />
+            <Route path='/admin-only' element={<UploadInfo />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 }

@@ -41,9 +41,7 @@ const WorksAndProjects = ({ children }) => {
 
       {
         inWapPage ? (
-          <>
-          
-          </>
+          <></>
         ) : (
           <>
             <div className="wap-footer">
