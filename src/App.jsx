@@ -19,9 +19,9 @@ export default function App() {
   return (
     <div className='whole-app'>
 
-      <div className='glow'>
-
-      </div>
+      <div className='glow-1'></div>
+      <div className='glow-2'></div>
+      <div className='glow-3'></div>
 
       <Router basename="/portfolio">
         <Navbar />

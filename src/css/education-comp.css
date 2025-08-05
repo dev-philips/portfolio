@@ -6,7 +6,8 @@
 }
 
 .education-comp {
-  background-color: var(--sec-bg);
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(50px) saturate(150%) !important;
   color: white;
   padding: 50px 40px;
   margin: 30px auto;

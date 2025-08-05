@@ -1,4 +1,3 @@
-
 :root {
   --orange: #ff7e5f;
   --yellow: #F4B400;
@@ -12,12 +11,10 @@
   margin-inline: auto;
   margin-bottom: 50px;
   color: white;
-  /* background-color: #1d1d1d; */
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(30px) saturate(150%) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(50px) saturate(150%) !important;
   padding: 50px 30px;
   border-radius: 40px;
-  border: 2px solid var(--orange);
 }
 
 .wap-head {

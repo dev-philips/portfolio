@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/other-hero.css'
 
-const OtherHero = ({pageTitle, theText, theSub, theImg, theGradText}) => {
+const OtherHero = ({pageTitle, theText, theSub, theImg, theGradText, imgSize}) => {
   
   return (
     <div className="home-hero">
@@ -17,7 +17,7 @@ const OtherHero = ({pageTitle, theText, theSub, theImg, theGradText}) => {
       </div>
 
       <div className="the-img">
-        <img className="animate__animated animate__pulse animate__infinite infinite animate__slower" src={theImg} alt="" />
+        <img style={{width: `${imgSize}`}} src={theImg} alt="" />
       </div>
 
     </div>

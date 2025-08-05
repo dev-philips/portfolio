@@ -7,8 +7,8 @@
 }
 
 .album-comp {
-  background-color: var(--sec-bg);
-  width: 90%;
+ background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(50px) saturate(150%) !important;  width: 90%;
   padding: 50px 40px;
   margin: 40px auto;
   border-radius: 30px;

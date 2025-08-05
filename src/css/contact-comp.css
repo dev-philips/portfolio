@@ -8,8 +8,8 @@
 .contact-comp {
   width: 90%;
   padding: 50px 40px;
-  background-color: var(--sec-bg);
-  color: white !important;
+ background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(50px) saturate(150%) !important;  color: white !important;
   margin: 40px auto;
   border-radius: 30px;
 }

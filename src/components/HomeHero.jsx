@@ -25,7 +25,7 @@ const HomeHero = () => {
         </div>
       </div>
 
-      <div className="the-img">
+      <div className="the-img-2">
         <img className="animate__animated animate__pulse animate__infinite infinite animate__slower" src={ spark_image } alt="" />
       </div>
 

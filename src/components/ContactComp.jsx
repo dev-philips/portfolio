@@ -64,7 +64,7 @@ const ContactComp = () => {
         <a href="tel:+2348146817725" target='_blank' className='one-c-link'><img src={phone_icon} alt="" /> +234 8146817725</a>
 
 
-        <a href="https://wa.me/08129248289" target='_blank' className='one-c-link'><img src={whatsapp_icon} alt="" /> +234 8129248289</a>
+        <a href="https://wa.me/08129248289" target='_blank' className='one-c-link'><img src={whatsapp_icon} alt="" /> +234 8146817725</a>
 
         <a href="https://www.instagram.com/philips_edun" target='_blank' className='one-c-link'><img src={instagram_icon} alt="" /> philips_edun</a>
 
@@ -72,7 +72,6 @@ const ContactComp = () => {
 
         <a href="https://www.x.com/philips_of_ng" target='_blank' className='one-c-link'><img src={twitter_icon} alt="" /> philips_of_ng</a>
 
-        <a href="https://web.facebook.com/profile.php?id=100074200946640" target='_blank' className='one-c-link'><img src={facebook_icon} alt="" /> Philips Olorunwa Edun</a>
       </div>
 
 

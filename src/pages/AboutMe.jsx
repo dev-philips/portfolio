@@ -15,6 +15,10 @@ import AlbumComp from '../components/AlbumComp'
 //EXTRAS
 import Spinner from '../components/Spinner'
 import verified_image from '../assets/images/verified-2.png'
+import p1 from '../assets/images/p1.png'
+import p3 from '../assets/images/p3.png'
+import p42 from '../assets/images/p42.png'
+
 import LongTalk from '../components/LongTalk'
 import OneAlbum from '../components/OneAlbum'
 import FakeALC from '../components/FakeALC'
@@ -175,10 +179,10 @@ const AboutMe = () => {
 
   return (
     <>
-      <OtherHero theText={`Hi, I’m Edun Philips, a 19 Years Old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={verified_image} />
+      <OtherHero theText={`Hi, I’m Edun Philips, a 20 year old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={p42} />
 
 
-      <LongTalk talk1={'Over the years, I’ve honed my skills in creating seamless, pixel-perfect interfaces while keeping performance and accessibility top of mind. I’m constantly exploring new tools and technologies, such as Tailwind CSS and TypeScript, to ensure I’m delivering cutting-edge solutions.'} talk2={'Beyond the code, I thrive on solving complex problems, optimizing workflows, and working closely with designers and developers to build web applications that not only function flawlessly but also deliver an exceptional user experience.'} color={'white'} size={'20'} />
+      <LongTalk talk1={'Over the years, I’ve honed my skills in creating seamless, pixel-perfect interfaces while keeping performance and accessibility top of mind. I’m constantly exploring new tools and technologies, such as Tailwind CSS and TypeScript, to ensure I’m delivering cutting-edge solutions.'} talk2={'Beyond the code, I thrive on solving complex problems, optimizing workflows, and working closely with designers and developers to build web applications that not only function flawlessly but also deliver an exceptional user experience.'} color={'white'} size={'18'} />
 
       <EducationComp>
 
