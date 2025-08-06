@@ -146,7 +146,7 @@ const AboutMe = () => {
 
       // const albumIds = `${adedamola_fireboy,twiceastall_burnaboy, playboy_fireboy,glorysoundprep_jonbellion}`
 
-      const albumIds = '4jUXymdfBvDcDQQV0gdure,1pUJnA3OSbvVr5afqxNARZ,3KfWAE3Y0JDa7CNo8ovJWu,2O9VJaLSnwjZ2HPpMaVoPU,5jqvO2VFTZ4n5MlE393wwT,0mxle2p72zngkE9p4KAE0A,5xKTTHKTTFyNxtOLGtznaR,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
+      const albumIds = '4jUXymdfBvDcDQQV0gdure,1pUJnA3OSbvVr5afqxNARZ,3KfWAE3Y0JDa7CNo8ovJWu,2O9VJaLSnwjZ2HPpMaVoPU,5jqvO2VFTZ4n5MlE393wwT,0mxle2p72zngkE9p4KAE0A,5xKTTHKTTFyNxtOLGtznaR--ost ,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
 
       const albumResponse = await axios.get(`https://api.spotify.com/v1/albums?ids=${albumIds}`, {
         headers: {
