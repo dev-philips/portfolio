@@ -3,30 +3,20 @@
   margin: 30px auto;
   padding: 0;
   height: 400px !important;
-  border: 2px solid green;
-
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(50px) saturate(150%) !important;
   display: flex;
   justify-content: space-evenly;
+  border-radius: 20px;
 }
 
-.track-one {
-  width: 47%;
-  height: fit-content;
-  border: 3px solid blue;
-  animation: scrollUp 30s linear infinite;
-}
 
-.track-two {
-  width: 47%;
+
+.one-image {
+  /* width: 400px; */
   height: 100%;
-  border: 3px solid rebeccapurple;
-}
-
-.one-pic {
-  width: 90%;
-  height: 200px;
-  border: 2px solid red;
   margin: 0 auto;
+  border-radius: 15px;
 
   /* animation: track-one-up infinite linear 5s; */
 }

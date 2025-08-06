@@ -1,12 +1,10 @@
 import React from 'react'
 import '../css/longtalk.css'
 
-const LongTalk = ({ color, size, talk1, talk2 }) => {
+const LongTalk = ({ color, talk1, talk2 }) => {
   return (
     <div className='long-talk' style={{
-      fontSize: `${size}px`,
-      color: `${color}`,
-      
+      color: `${color}`,      
     }}>
 
       <p>

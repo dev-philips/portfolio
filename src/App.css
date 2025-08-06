@@ -5,6 +5,15 @@
   --grey-text: #ccc0c0;
 }
 
+
+p {
+  font-size: 14px;
+}
+
+span {
+  /* font-size: 14px; */
+}
+
 .whole-app {
   /* background-color: white; */
 }

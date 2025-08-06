@@ -18,7 +18,9 @@ import Spinner from '../components/Spinner'
 import verified_image from '../assets/images/verified-2.png'
 import p1 from '../assets/images/p1.png'
 import p3 from '../assets/images/p3.png'
-import p42 from '../assets/images/p42.png'
+// import p42 from '../assets/images/p42.png'
+import p43 from '../assets/images/p4.webp'
+import my_image from '../assets/images/p4-final.webp'
 
 import LongTalk from '../components/LongTalk'
 import OneAlbum from '../components/OneAlbum'
@@ -144,7 +146,7 @@ const AboutMe = () => {
 
       // const albumIds = `${adedamola_fireboy,twiceastall_burnaboy, playboy_fireboy,glorysoundprep_jonbellion}`
 
-      const albumIds = '1pUJnA3OSbvVr5afqxNARZ,6z6r9RgyDDp35cfOAixpvq,2O9VJaLSnwjZ2HPpMaVoPU,0mxle2p72zngkE9p4KAE0A,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
+      const albumIds = '4jUXymdfBvDcDQQV0gdure,1pUJnA3OSbvVr5afqxNARZ,3KfWAE3Y0JDa7CNo8ovJWu,2O9VJaLSnwjZ2HPpMaVoPU,5jqvO2VFTZ4n5MlE393wwT,0mxle2p72zngkE9p4KAE0A,5xKTTHKTTFyNxtOLGtznaR,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
 
       const albumResponse = await axios.get(`https://api.spotify.com/v1/albums?ids=${albumIds}`, {
         headers: {
@@ -180,10 +182,12 @@ const AboutMe = () => {
 
   return (
     <>
-      <OtherHero theText={`Hi, I’m Edun Philips, a 20 year old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={p42} />
+      <OtherHero theText={`Hi, I’m Edun Philips, a 20 year old Frontend Developer from Ibadan, Nigeria. I'm Passionate about creating visually stunning, intuitive, and highly functional web experiences that enhance user interaction and solve real-world problems.`} theSub={'Available for projects'} theImg={my_image} />
 
 
-      <LongTalk talk1={'Over the years, I’ve honed my skills in creating seamless, pixel-perfect interfaces while keeping performance and accessibility top of mind. I’m constantly exploring new tools and technologies, such as Tailwind CSS and TypeScript, to ensure I’m delivering cutting-edge solutions.'} talk2={'Beyond the code, I thrive on solving complex problems, optimizing workflows, and working closely with designers and developers to build web applications that not only function flawlessly but also deliver an exceptional user experience.'} color={'white'} size={'18'} />
+      <LongTalk talk1={'Over the years, I’ve honed my skills in creating seamless, pixel-perfect interfaces while keeping performance and accessibility top of mind. I’m constantly exploring new tools and technologies, such as Tailwind CSS and TypeScript, to ensure I’m delivering cutting-edge solutions.'} talk2={'Beyond the code, I thrive on solving complex problems, optimizing workflows, and working closely with designers and developers to build web applications that not only function flawlessly but also deliver an exceptional user experience.'} color={'white'} />
+
+
 
       <EducationComp>
 
