@@ -6,20 +6,7 @@ const PictureGallery = () => {
     <div className='picture-gallery'>
       <div className='track-one'>
 
-        <div>
-          <div className='one-pic'>
-
-          </div>
-          <div className='one-pic'>
-
-          </div>
-          <div className='one-pic'>
-
-          </div>
-          <div className='one-pic'>
-
-          </div>
-        </div>
+        
 
 
         <div>

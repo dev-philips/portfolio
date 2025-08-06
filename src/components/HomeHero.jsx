@@ -13,7 +13,7 @@ const HomeHero = () => {
       <div className="the-text">
         <h5>Hey there! 👋</h5>
 
-        <h1>I’m Philips, A <span className="fr-dev">Frontend developer</span> with a knack for creating seamless and
+        <h1>I’m Philips, a <span className="fr-dev">Frontend developer</span> with a knack for creating seamless and
           engaging user experiences.</h1>
 
         <p className="available"><span></span>Available for projects</p>

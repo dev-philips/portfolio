@@ -9,8 +9,8 @@
   width: 90%;
   border-radius: 30px;
   padding: 50px 40px;
-  background-color: var(--sec-bg);
-  margin: 30px auto;
+ background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(50px) saturate(150%) !important;  margin: 30px auto;
   color: white;
 }
 

@@ -11,6 +11,7 @@ import EducationComp from '../components/EducationComp'
 import OneEducation from '../components/OneEducation'
 import ContactComp from '../components/ContactComp'
 import AlbumComp from '../components/AlbumComp'
+import PictureGallery from '../components/PictureGallery'
 
 //EXTRAS
 import Spinner from '../components/Spinner'
@@ -258,6 +259,7 @@ const AboutMe = () => {
         )
       }
 
+      <PictureGallery />
 
       <CallToAction />
     </>

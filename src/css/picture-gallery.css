@@ -11,8 +11,9 @@
 
 .track-one {
   width: 47%;
-  height: 100%;
+  height: fit-content;
   border: 3px solid blue;
+  animation: scrollUp 30s linear infinite;
 }
 
 .track-two {
@@ -27,11 +28,26 @@
   border: 2px solid red;
   margin: 0 auto;
 
-  animation: track-one-up infinite linear 5s;
+  /* animation: track-one-up infinite linear 5s; */
 }
 
 
-@keyframes track-one-up {
+@keyframes scrollUp {
+  25% {
+    transform: translateY(100%)
+  }
+  50% {
+    transform: translateY(-100%)
+  }
+  75% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* @keyframes track-one-up {
   from {
     transform: translateY(0);
   }
@@ -39,4 +55,4 @@
   to {
     transform: translateY(200%);
   }
-}
+} */
