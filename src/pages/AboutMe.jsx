@@ -119,57 +119,72 @@ const AboutMe = () => {
 
   const fetchAlbums = async () => {
     try {
+      setLoadingAlbums(true);
 
-      setLoadingAlbums(true)
+      // Step 1: Get Access Token from Spotify
+      const clientId = '3439fb00a69a4381a1c257a5bfc918f2';
+      const clientSecret = '082147efedcb4e8e85c4a913add2ec9d';
+      const authHeader = `Basic ${btoa(`${clientId}:${clientSecret}`)}`;
 
-      //GETTING THE ACCESS TOKEN
-
-      const tokenResponse = await axios.post("https://accounts.spotify.com/api/token",
+      const tokenResponse = await axios.post(
+        'https://accounts.spotify.com/api/token',
         new URLSearchParams({ grant_type: 'client_credentials' }),
         {
           headers: {
-            Authorization: `Basic ${btoa("3439fb00a69a4381a1c257a5bfc918f2:082147efedcb4e8e85c4a913add2ec9d")}`,
-            "Content-Type": "application/x-www-form-urlencoded",
-          }
+            Authorization: authHeader,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
         }
       );
 
-      const accessToken = tokenResponse.data.access_token
+      const accessToken = tokenResponse.data.access_token;
+      console.log('✅ Access token received:', accessToken);
 
-      //GETING THE ALBUMS
+      // Step 2: Define Album IDs (Max 20, no spaces)
+      const albumIds = [
+        '4jUXymdfBvDcDQQV0gdure',
+        '1pUJnA3OSbvVr5afqxNARZ',
+        '3KfWAE3Y0JDa7CNo8ovJWu',
+        '2O9VJaLSnwjZ2HPpMaVoPU',
+        '5jqvO2VFTZ4n5MlE393wwT',
+        '0mxle2p72zngkE9p4KAE0A',
+        '5xKTTHKTTFyNxtOLGtznaR',
+        '2pANu4qucnliJuRR94eZSV',
+        '59YYObx9wFEFG5zVdlfwvf',
+      ].join(',');
 
-
-      const adedamola_fireboy = '0mxle2p72zngkE9p4KAE0A'
-      const playboy_fireboy = '1pUJnA3OSbvVr5afqxNARZ'
-      const twiceastall_burnaboy = '2pANu4qucnliJuRR94eZSV'
-      const glorysoundprep_jonbellion = '59YYObx9wFEFG5zVdlfwvf'
-
-      // const albumIds = `${adedamola_fireboy,twiceastall_burnaboy, playboy_fireboy,glorysoundprep_jonbellion}`
-
-      const albumIds = '4jUXymdfBvDcDQQV0gdure,1pUJnA3OSbvVr5afqxNARZ,3KfWAE3Y0JDa7CNo8ovJWu,2O9VJaLSnwjZ2HPpMaVoPU,5jqvO2VFTZ4n5MlE393wwT,0mxle2p72zngkE9p4KAE0A,5xKTTHKTTFyNxtOLGtznaR--ost ,2pANu4qucnliJuRR94eZSV,59YYObx9wFEFG5zVdlfwvf'
-
-      const albumResponse = await axios.get(`https://api.spotify.com/v1/albums?ids=${albumIds}`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`
+      // Step 3: Fetch Albums from Spotify API
+      const albumResponse = await axios.get(
+        `https://api.spotify.com/v1/albums?ids=${albumIds}`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
         }
-      })
+      );
 
-      const allAlbums = albumResponse.data.albums
+      const allAlbums = albumResponse.data.albums;
+      console.log('🎧 Albums fetched:', allAlbums);
 
-      console.log('These are the albums', allAlbums);
-
-      setAlbums(allAlbums)
-
-      setTimeout(() => {
-        setLoadingAlbums(false)
-      }, 2000);
-
+      setAlbums(allAlbums);
     } catch (error) {
-      console.log('Error fetching your albums', error);
-      setAlbumError(true)
-      setLoadingAlbums(false)
+      console.error('❌ Error fetching your albums');
+
+      if (error.response) {
+        console.error('Status:', error.response.status);
+        console.error('Error data:', error.response.data);
+      } else {
+        console.error('Error message:', error.message);
+      }
+
+      setAlbumError(true);
+    } finally {
+      setTimeout(() => {
+        setLoadingAlbums(false);
+      }, 2000);
     }
-  }
+  };
+
 
   useEffect(() => {
     fetchAlbums()
