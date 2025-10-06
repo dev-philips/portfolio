@@ -120,6 +120,7 @@ const Footer = () => {
                 <li><Link to={'/projects'}>Projects</Link></li>
                 <li><Link to={'/about-me'}>About me</Link></li>
                 <li><Link to={'/tools'}>Tools</Link></li>
+                <li><Link to={'/admin-only'}>Admin</Link></li>
               </ul>
             </div>
 
