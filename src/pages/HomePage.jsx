@@ -11,6 +11,9 @@ import OneExperience from '../components/OneExperience'
 import CallToAction from '../components/CallToAction'
 import Spinner from '../components/Spinner'
 import FakeWAP from '../components/FakeWAP'
+import FlyInDiv from '../components/FlyInDiv'
+
+import { motion } from 'framer-motion'
 
 const HomePage = () => {
 
@@ -32,7 +35,6 @@ const HomePage = () => {
 
     try {
       setLoadingProjects(true)
-
       const response = await axios.get(api, { headers })
       const allProjects = await response.data.record.record
       console.log('These are the projects from the API', allProjects);
@@ -117,7 +119,9 @@ const HomePage = () => {
 
   return (
     <>
-      <HomeHero />
+      <FlyInDiv>
+        <HomeHero />
+      </FlyInDiv>
 
       {
         loadingProjects ? (
@@ -182,7 +186,10 @@ const HomePage = () => {
         }
       </ExperienceComp>
 
+
       <CallToAction />
+
+
     </>
   )
 }

@@ -1,6 +1,5 @@
-
 .one-work-card {
-  border: 1px solid #909090;
+  border: 1px solid #909090 !important;
   padding: 10px;
   border-radius: 12px;
   /* max-width: 500px; */

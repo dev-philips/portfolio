@@ -1,9 +1,10 @@
 import React from 'react'
 import '../css/one-education.css'
+import FlyInDiv from './FlyInDiv'
 
 const OneEducation = ({ education }) => {
   return (
-    <div className='one-education'>
+    <FlyInDiv direction='left' delay={0.8} className='one-education'>
       <div className='oe-dot'>
 
       </div>
@@ -13,7 +14,7 @@ const OneEducation = ({ education }) => {
         <p>{ education.institution }</p>
         <p>{ education.duration }</p>
       </div>
-    </div>
+    </FlyInDiv>
   )
 }
 

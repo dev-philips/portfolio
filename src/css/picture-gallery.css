@@ -2,14 +2,21 @@
   width: 90% !important;
   margin: 30px auto;
   padding: 0;
-  height: 400px !important;
   background-color: rgba(255, 255, 255, 0.05) !important;
   backdrop-filter: blur(50px) saturate(150%) !important;
-  display: flex;
-  justify-content: space-evenly;
+  padding: 20px;
   border-radius: 20px;
 }
 
+.pg-head {
+  color: white;
+}
+
+.pg-body {
+  height: 400px;
+  display: flex;
+  justify-content: space-evenly;
+}
 
 
 .one-image {
@@ -26,12 +33,15 @@
   25% {
     transform: translateY(100%)
   }
+
   50% {
     transform: translateY(-100%)
   }
+
   75% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(-100%);
   }

@@ -13,6 +13,7 @@ import facebook_icon from '../assets/images/facebook.png'
 import instagram_icon from '../assets/images/instagram.png'
 import twitter_icon from '../assets/images/twitter.png'
 import send_icon from '../assets/images/send.png'
+import FlyInDiv from './FlyInDiv'
 
 
 const ContactComp = () => {
@@ -55,7 +56,7 @@ const ContactComp = () => {
   }
 
   return (
-    <div className='contact-comp'>
+    <FlyInDiv className='contact-comp'>
       <div className='cc-head'>
         <h2>Contact me</h2>
       </div>
@@ -99,7 +100,7 @@ const ContactComp = () => {
           </button>
         </div>
       </form>
-    </div>
+    </FlyInDiv>
   )
 }
 

@@ -34,7 +34,7 @@ import slider16 from '../assets/images/slider_images/converted/slider16.webp';
 const imagesArray = [
   slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8,
   slider9, slider10, slider11, slider12, slider13, slider14, slider15,
-  slider16, ];
+  slider16,];
 
 
 
@@ -47,38 +47,47 @@ import 'swiper/css/navigation';
 const PictureGallery = () => {
   return (
     <div className='picture-gallery'>
-      <Swiper
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        effect={'coverflow'}
-        // grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={3}
-        loop={true}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-          slideShadows: true,
-        }}
-        breakpoints={{
-          0: {
-            slidesPerView: 2
-          },
-          640: {
-            slidesPerView: 3
-          },
-          1024: {
-            slidesPerView: 3
-          }
-        }}
-      >
-        {imagesArray.map((image, index) => (
-          <SwiperSlide key={index}>
-            <img className='one-image' src={image} alt="" />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+
+      <div className='pg-head'>
+        <h2>Witness some slides of greatness</h2>
+        <p>Swipe left or right to see more pictures</p>
+      </div>
+
+      <div className='pg-body'>
+        <Swiper
+          modules={[EffectCoverflow, Pagination, Navigation]}
+          effect={'coverflow'}
+          // grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={3}
+          loop={true}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: true,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 2
+            },
+            640: {
+              slidesPerView: 3
+            },
+            1024: {
+              slidesPerView: 3
+            }
+          }}
+        >
+          {imagesArray.map((image, index) => (
+            <SwiperSlide key={index}>
+              <img className='one-image' src={image} alt="" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
     </div>
   );
 };

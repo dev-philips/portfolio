@@ -2,11 +2,12 @@ import React from 'react'
 import '../css/call-to-action.css'
 import puzzle_image from '../assets/images/puzzle.png'
 import { Link } from 'react-router-dom'
+import FlyInDiv from './FlyInDiv'
 
 const CallToAction = () => {
 
   return (
-    <div className="call-to-action">
+    <FlyInDiv className="call-to-action">
       <div className="cta-text">
         <h4>
           Your next big project deserves a flawless web experience.
@@ -20,7 +21,7 @@ const CallToAction = () => {
       <div className="cta-img">
         <img className='animate__animated animate__pulse animate__infinite infinite animate__slower' src={puzzle_image} alt="" />
       </div>
-    </div>
+    </FlyInDiv>
   )
 }
 

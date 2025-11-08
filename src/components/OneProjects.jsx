@@ -3,6 +3,7 @@ import '../css/oneproject.css'
 import work_image from '../assets/images/job.jpg'
 
 import { useNavigate } from 'react-router-dom'
+import FlyInDiv from './FlyInDiv'
 
 const OneProject = ({ project }) => {
 
@@ -14,7 +15,7 @@ const OneProject = ({ project }) => {
   }
 
   return (
-    <div className="one-work-card" onClick={handleClick}>
+    <FlyInDiv className="one-work-card" onClick={handleClick}>
       <div className="owc-img">
 
         <img src={ project.image ? project.image : work_image } alt="" />
@@ -32,7 +33,7 @@ const OneProject = ({ project }) => {
         </div>
 
       </div>
-    </div>
+    </FlyInDiv>
   )
 }
 

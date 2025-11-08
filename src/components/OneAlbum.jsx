@@ -2,13 +2,14 @@ import React from "react";
 import "../css/one-album.css";
 import album_cover from "../assets/images/album.jpeg";
 import { useNavigate } from "react-router-dom";
+import FlyInDiv from "./FlyInDiv";
 
 const OneAlbum = ({ album }) => {
 
   const navigate = useNavigate()
 
   return (
-    <div className="one-album" onClick={() => navigate('/albums/:albumId')}>
+    <FlyInDiv once={false} className="one-album" onClick={() => navigate('/albums/:albumId')}>
 
       <div className="album-img">
         <img
@@ -34,7 +35,7 @@ const OneAlbum = ({ album }) => {
           </a>
         </div>
       </div>
-    </div>
+    </FlyInDiv>
   );
 };
 

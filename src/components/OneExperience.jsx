@@ -1,9 +1,10 @@
 import React from 'react'
 import '../css/one-experience.css'
+import FlyInDiv from './FlyInDiv'
 
 const OneExperience = ({ experience }) => {
   return (
-    <div className="one-exper mb-4">
+    <FlyInDiv direction='left' delay={0.8} className="one-exper mb-4">
       <div className="oe-left">
 
         <span className="green-dot"></span>
@@ -19,7 +20,7 @@ const OneExperience = ({ experience }) => {
       <div className="oe-right">
         <span className="exp-date d-none d-md-block">{ experience.duration }</span>
       </div>
-    </div>
+    </FlyInDiv>
   )
 }
 
