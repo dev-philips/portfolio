@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const FlyInDiv = ({ children, direction = 'bottom', delay = 0, once = true, className = '' }) => {
+const FlyInDiv = ({ children, direction = 'bottom', delay = 0, once = true, className = '', ...props }) => {
 
   const directions = {
     bottom: { y: 80, x: 0 },
@@ -22,6 +22,7 @@ const FlyInDiv = ({ children, direction = 'bottom', delay = 0, once = true, clas
     }}
     style={{ willChange: 'transform, opacity' }}
     className={className}
+    {...props}
     >
       { children }
     </motion.div>

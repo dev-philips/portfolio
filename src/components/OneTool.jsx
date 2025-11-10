@@ -6,10 +6,11 @@ import '../css/one-tool.css'
 
 //EXTRAS
 import api_icon from '../assets/images/api.png'
+import FlyInDiv from './FlyInDiv'
 
 const OneTool = ({ toolImage, toolName, toolDescr }) => {
   return (
-    <div className='one-tool'>
+    <FlyInDiv direction='left' delay={0.8} className='one-tool'>
       <div className='ot-img-div'>
         <img src={ toolImage } alt="" />
       </div>
@@ -19,7 +20,7 @@ const OneTool = ({ toolImage, toolName, toolDescr }) => {
 
         <p>{ toolDescr }</p>
       </div>
-    </div>
+    </FlyInDiv>
   )
 }
 

@@ -1,12 +1,13 @@
 import React from 'react'
 import '../css/other-hero.css'
+import FlyInDiv from './FlyInDiv'
 
 const OtherHero = ({pageTitle, theText, theSub, theImg, theGradText, imgSize}) => {
   
   return (
     <div className="home-hero">
 
-      <div className="the-text">
+      <FlyInDiv direction='left' className="the-text">
         <h5 className='mb-5'>{ pageTitle }</h5>
 
         <h3>{theText}</h3>
@@ -14,11 +15,11 @@ const OtherHero = ({pageTitle, theText, theSub, theImg, theGradText, imgSize}) =
         <p className="available"><span></span>{ theSub }</p>
 
         
-      </div>
+      </FlyInDiv>
 
-      <div className="the-img">
+      <FlyInDiv direction='right' className="the-img">
         <img style={{width: `${imgSize}`}} src={theImg} alt="" />
-      </div>
+      </FlyInDiv>
 
     </div>
   )
